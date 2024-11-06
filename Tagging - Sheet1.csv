@@ -1,0 +1,22 @@
+name,location,quiet,talkative,open_late,coffee_shop,big_tables,couches,vending machine,crowd_level
+Gregory Hall,,0,0,1,0,1,0,0,1
+Lincoln Hall,,0,1,0,0,1,1,1,2
+English Building,,1,0,0,0,0,0,1,1
+Henry Adminstration Building,,1,0,0,0,0,1,0,1
+"Literatures, Cultures, and Lingustics Building",,1,0,0,0,1,1,0,1
+Davenport Hall,,1,0,0,0,0,0,0,1
+Noyes Laboratory,,1,0,0,0,1,0,1,3
+Illinois Union,,0,1,1,1,1,1,1,1
+Altgeld Hall,,1,0,0,0,0,0,1,1
+Natural History Building,,0,1,0,0,1,1,0,2
+Everitt Laboratory,,1,0,0,0,1,0,0,2
+Engineering Hall,,1,0,1,0,0,0,1,1
+Mechanical Engineering Laboratory,,1,0,0,0,1,0,0,1
+Talbot Laboratory ,,1,0,0,0,1,0,1,2
+Grainger Engineering Library,,1,1,1,1,1,1,1,3
+Sidney Lu Mechanical Engineering Building ,,0,1,0,1,1,1,1,3
+Transportation Building,,1,1,0,0,1,0,0,1
+Thomas M. Siebel Center for Computer Science,,0,1,1,0,1,0,1,2
+Digital Computer Laboratory,,0,1,0,0,0,0,1,1
+Newmark Civil Engineering Laboratory,,0,1,0,0,0,1,0,2
+Electrical and Computer Engineering Building,,0,1,1,1,1,0,1,2
