@@ -13,7 +13,11 @@ export function BuildingCard({building} : {building : any}) {
                 <MapPin size={icon_size} className="inline"/>
                 <Link href='#' className="font-normal">Address</Link>
             </div>
-            <Tag name='coffee_shop' state={0} showName={false}/>
+            <div className="flex flex-row gap-x-2 items-center flex-wrap">
+                {['quiet', 'talkative', 'open_late', 'coffee_shop', 'big_tables', 'couches', 'vending_machine'].map((tag, i) => (
+                    <Tag key={i} name={tag} state={building[tag]} showName={false}/>
+                ))}
+            </div>
         </div>
     );
 }
