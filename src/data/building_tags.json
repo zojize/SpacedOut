@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Gregory Hall",
+    "quiet": false,
+    "talkative": false,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Lincoln Hall",
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": true,
+    "crowd_level": 2
+  },
+  {
+    "name": "English Building",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 1
+  },
+  {
+    "name": "Henry Adminstration Building",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": true,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Literatures, Cultures, and Lingustics Building",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Davenport Hall",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Noyes Laboratory",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 3
+  },
+  {
+    "name": "Illinois Union",
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": true,
+    "crowd_level": 1
+  },
+  {
+    "name": "Altgeld Hall",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 1
+  },
+  {
+    "name": "Natural History Building",
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": false,
+    "crowd_level": 2
+  },
+  {
+    "name": "Everitt Laboratory",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": false,
+    "crowd_level": 2
+  },
+  {
+    "name": "Engineering Hall",
+    "quiet": true,
+    "talkative": false,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 1
+  },
+  {
+    "name": "Mechanical Engineering Laboratory",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Talbot Laboratory",
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 2
+  },
+  {
+    "name": "Grainger Engineering Library",
+    "quiet": true,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": true,
+    "crowd_level": 3
+  },
+  {
+    "name": "Sidney Lu Mechanical Engineering Building",
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending machine": true,
+    "crowd_level": 3
+  },
+  {
+    "name": "Transportation Building",
+    "quiet": true,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": false,
+    "crowd_level": 1
+  },
+  {
+    "name": "Thomas M. Siebel Center for Computer Science",
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 2
+  },
+  {
+    "name": "Digital Computer Laboratory",
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 1
+  },
+  {
+    "name": "Newmark Civil Engineering Laboratory",
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": 2,
+    "crowd_level": 2
+  },
+  {
+    "name": "Electrical and Computer Engineering Building",
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": false,
+    "vending machine": true,
+    "crowd_level": 2
+  }
+]
