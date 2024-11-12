@@ -44,19 +44,6 @@ export default function Page() {
               </Button>
             </AdvancedMarker>
           ))}
-          {/* <AdvancedMarker
-            position={{ lng: -88.2247336803035, lat: 40.11383687791036 }}
-            title="Marker"
-            onClick={() => console.log('clicked')}
-          >
-            <Button
-              className="rounded-full bg-green-300"
-              size="icon"
-              variant="secondary"
-            >
-              <User />
-            </Button>
-          </AdvancedMarker> */}
         </Map>
       </APIProvider>
     </>
