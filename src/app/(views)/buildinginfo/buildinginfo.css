@@ -1,0 +1,95 @@
+.maincontainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.status-open {
+    color: green;
+    font-weight: bold;
+}
+
+.status-closed {
+    color: rgb(132, 0, 0);
+    font-weight: bold;
+}
+
+.building-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.building-hours {
+    font-size: 15px;
+    align-self: start;
+}
+
+.building-address {
+    font-size: 15px;
+    align-self: start;
+}
+
+.maininfo {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    padding: 10px;
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+
+.rooms-text {
+    font-weight: bold;
+}
+
+
+.buildingtags {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    padding: 10px;
+    justify-content: center;
+}
+
+.tags-text {
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tag-icons-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    justify-content: space-evenly;
+    margin-right: 15px;
+}
+
+.tag-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.more-info-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.roomscontainer {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5%;
+}
