@@ -18,7 +18,7 @@ export default function RootLayout({
       {children}
       <Filters />
       <Button
-        className="absolute m-4 right-0 bottom-0 touch-none"
+        className="fixed m-4 right-0 bottom-0 touch-none "
         variant="outline"
         onClick={() => router.push(pathname.endsWith('map') ? '/list' : '/map')}
       >
