@@ -14,7 +14,7 @@ export default function Page() {
           key={i}
           building={building}/>
       ))}
-      <div className="h-5 w-screen"/>
+      <div className="h-1 w-screen"/>
     </div>
   );
 }
