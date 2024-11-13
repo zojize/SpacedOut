@@ -108,3 +108,12 @@
     justify-content: space-evenly;
     font-size: 25px;
 }
+
+.back-button {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

@@ -1,12 +1,9 @@
 import React from 'react';
 import './buildinginfo.css';
-import { Speech } from 'lucide-react';
-import { VolumeOff } from 'lucide-react';
-import { Moon } from 'lucide-react';
-import { Coffee } from 'lucide-react';
-import { Armchair } from 'lucide-react';
+import { Speech, VolumeOff, Moon, Coffee, Armchair, User, ChevronLeft } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
+import { useRouter } from 'next/navigation';
 
 interface BuildingInfoProps {
     buildingName: string;
@@ -34,9 +31,14 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     tags,
     rooms,
 }) => {
+    const router = useRouter();
+
+    const handleBackClick = () => {
+        router.back();
+    };
     const convertTime = (time: string, to12Hour: boolean = true) => {
         if (time.length === 4) {
-            time = time.slice(0, 2) + ":00" + time.slice(2);  // e.g., "7AM" -> "7:00AM"
+            time = time.slice(0, 2) + ":00" + time.slice(2);  // "7AM" -> "7:00AM"
         }
 
         if (time.includes(':') && time.length === 5) { // this may break things... but works for now
@@ -61,12 +63,29 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         }
     };    
 
-    const crowdIcon = tags.crowd_level === 3 ? (
-        <Table />
-    ) : tags.crowd_level === 2 ? (
-        <Table />
-    ) : (
-        <Table />
+    const getCrowdLevelColor = (level: number) => {
+        switch (level) {
+            case 3: return '#ef4444';
+            case 2: return '#f59e0b';
+            case 1: return '#10b981';
+            default: return 'gray';
+        }
+    };
+    
+    const crowdIcon = (
+        <span
+            style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                backgroundColor: getCrowdLevelColor(tags.crowd_level),
+            }}
+        >
+            <User style={{ color: 'black' }} />
+        </span>
     );
 
     const tagIcons = [
@@ -190,6 +209,9 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 
     return (
         <div className="maincontainer">
+            <button onClick={handleBackClick} className="back-button">
+                <ChevronLeft size={24} />
+            </button>
             <div className="maininfo">
                 <span className="building-name">{buildingName}{crowdIcon}</span>
                 <span className="building-hours">{getBuildingStatus()}</span>
@@ -224,22 +246,3 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 };
 
 export default BuildingInfo;
-
-
-// ignore, for testing:
-            // console.log("SECTION: " + section.course)
-            // console.log("SELECTED TIME")
-            // console.log("currentStartHour: " + currentStartHour)
-            // console.log("currentStartMinute: " + currentStartMinute)
-            // console.log("currentEndHour: " + currentEndHour)
-            // console.log("currentEndMinute: " + currentEndMinute)
-
-            // console.log("SECTION TIME")
-            // console.log("sectionStartHour: " + sectionStartHour)
-            // console.log("sectionStartMinute: " + sectionStartMinute)
-            // console.log("sectionEndHour: " + sectionEndHour)
-            // console.log("sectionEndMinute: " + sectionEndMinute)
-            // console.log(currentEndHour < sectionStartHour)
-            // console.log((currentEndHour === sectionStartHour && currentEndMinute <= sectionStartMinute))
-            // console.log((sectionEndHour < currentStartHour))
-            // console.log((sectionEndHour === currentStartHour && sectionEndMinute <= currentStartMinute))
