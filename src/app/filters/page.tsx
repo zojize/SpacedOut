@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import TimePicker from 'react-time-picker'
 import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 export default function Page(): JSX.Element {
   const [activeFilters, setActiveFilters] = useState<boolean[]>(Array(9).fill(false));
@@ -61,17 +62,18 @@ export default function Page(): JSX.Element {
       <div style={{display: 'flex', flexDirection: 'row'}}>
         <div style={{ marginTop: '5vh', paddingRight:'2vh'}}>
           <h1 style={{ textAlign: 'center', fontSize: '3vh' }}>Select a Start Time</h1>
-          <div style={{alignItems: 'center'}}>
+          <div style={{alignItems: 'center', paddingLeft:'5vh'}}>
             <TimePicker onChange={setSTime} value={stime}/>
           </div>
         </div>
         <div style={{ marginTop: '5vh' }}>
           <h1 style={{ textAlign: 'center', fontSize: '3vh' }}>Select a End Time</h1>
-          <div style={{alignItems: 'center'}}>
+          <div style={{alignItems: 'center', paddingLeft:'5vh'}}>
             <TimePicker onChange={setETime} value={etime}/>
           </div>
         </div>
       </div>
+      <Button><h1>Apply Changes</h1></Button>
     </div>
   );
 }
