@@ -9,6 +9,7 @@ import { User } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
+import { useRouter } from 'next/navigation';
 
 interface BuildingInfoProps {
     buildingName: string;
@@ -36,6 +37,11 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     tags,
     rooms,
 }) => {
+    const router = useRouter();
+
+    const handleBackClick = () => {
+        router.back();
+    };
     const convertTime = (time: string, to12Hour: boolean = true) => {
         if (time.length === 4) {
             time = time.slice(0, 2) + ":00" + time.slice(2);  // e.g., "7AM" -> "7:00AM"
@@ -209,7 +215,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 
     return (
         <div className="maincontainer">
-            <button className="back-button" onClick={() => {}}>
+            <button onClick={handleBackClick} className="back-button">
                 <ChevronLeft size={24} />
             </button>
             <div className="maininfo">
