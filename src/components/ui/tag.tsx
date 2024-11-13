@@ -23,6 +23,8 @@ export function Tag({name, showName} : {name : any, showName : boolean}) {
         <div 
             data-tooltip-id="tag-tooltip" 
             data-tooltip-content={tag_info[name]}
+            data-tooltip-delay-hide={100}
+            data-tooltip-place='top'
             className="rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 bg-black bg-opacity-5"
             onClick={(e) => e.stopPropagation()}
         >
