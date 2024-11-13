@@ -59,9 +59,6 @@ export function Filters({
   //   6: false,
   //   7: false,
   // });
-  useEffect(() => {
-    console.log(activeFilters);
-  }, [activeFilters]);
   const iconMap = {
     quiet: <VolumeOff />,
     talkative: <Speech />,
