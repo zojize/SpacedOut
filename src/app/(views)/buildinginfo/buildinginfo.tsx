@@ -1,12 +1,6 @@
 import React from 'react';
 import './buildinginfo.css';
-import { Speech } from 'lucide-react';
-import { VolumeOff } from 'lucide-react';
-import { Moon } from 'lucide-react';
-import { Coffee } from 'lucide-react';
-import { Armchair } from 'lucide-react';
-import { User } from 'lucide-react';
-import { ChevronLeft } from 'lucide-react';
+import { Speech, VolumeOff, Moon, Coffee, Armchair, User, ChevronLeft } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
 import { useRouter } from 'next/navigation';
@@ -44,7 +38,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     };
     const convertTime = (time: string, to12Hour: boolean = true) => {
         if (time.length === 4) {
-            time = time.slice(0, 2) + ":00" + time.slice(2);  // e.g., "7AM" -> "7:00AM"
+            time = time.slice(0, 2) + ":00" + time.slice(2);  // "7AM" -> "7:00AM"
         }
 
         if (time.includes(':') && time.length === 5) { // this may break things... but works for now
@@ -90,7 +84,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                 backgroundColor: getCrowdLevelColor(tags.crowd_level),
             }}
         >
-            <User style={{ color: 'white' }} /> {/* Icon color to contrast the background */}
+            <User style={{ color: 'black' }} />
         </span>
     );
 
@@ -252,22 +246,3 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 };
 
 export default BuildingInfo;
-
-
-// ignore, for testing:
-            // console.log("SECTION: " + section.course)
-            // console.log("SELECTED TIME")
-            // console.log("currentStartHour: " + currentStartHour)
-            // console.log("currentStartMinute: " + currentStartMinute)
-            // console.log("currentEndHour: " + currentEndHour)
-            // console.log("currentEndMinute: " + currentEndMinute)
-
-            // console.log("SECTION TIME")
-            // console.log("sectionStartHour: " + sectionStartHour)
-            // console.log("sectionStartMinute: " + sectionStartMinute)
-            // console.log("sectionEndHour: " + sectionEndHour)
-            // console.log("sectionEndMinute: " + sectionEndMinute)
-            // console.log(currentEndHour < sectionStartHour)
-            // console.log((currentEndHour === sectionStartHour && currentEndMinute <= sectionStartMinute))
-            // console.log((sectionEndHour < currentStartHour))
-            // console.log((sectionEndHour === currentStartHour && sectionEndMinute <= currentStartMinute))
