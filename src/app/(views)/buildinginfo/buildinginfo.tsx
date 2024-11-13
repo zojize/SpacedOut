@@ -1,12 +1,24 @@
 import React from 'react';
-import Image from 'next/image';
 import './buildinginfo.css';
+// import { CircleHelp } from 'lucide-react';
+import { VendingMachine } from '@/components/icons/VendingMachine';
+import { Table } from '@/components/icons/Table';
 
 interface BuildingInfoProps {
     buildingName: string;
     buildingAddress: string;
     hours: { [day: string]: string };
     selectedTime: Date | { start: Date; end: Date };
+    tags: {
+        quiet: number;
+        talkative: number;
+        open_late: number;
+        coffee_shop: number;
+        big_tables: number;
+        couches: number;
+        vending_machine: number;
+        crowd_level: number;
+    }
     rooms: { [roomNumber: string]: { sections: Array<{ course: string; time: { start: string; end: string }; days: string[] }> } };
 }
 
@@ -15,6 +27,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     buildingAddress, 
     hours,
     selectedTime,
+    tags,
     rooms,
 }) => {
     const convertTime = (time: string, to12Hour: boolean = true) => {
@@ -43,6 +56,24 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             return `${hour24}:${minute.padStart(2, '0')}`;
         }
     };    
+
+    const crowdIcon = tags.crowd_level === 3 ? (
+        <Table />
+    ) : tags.crowd_level === 2 ? (
+        <Table />
+    ) : (
+        <Table />
+    );
+
+    const tagIcons = [
+        { show: tags.open_late, component: Table },
+        { show: tags.big_tables, component: Table },
+        { show: tags.couches, component: Table },
+        { show: tags.quiet, component: Table },
+        { show: tags.talkative, component: Table },
+        { show: tags.coffee_shop, component: VendingMachine },
+        { show: tags.vending_machine, component: VendingMachine }
+    ];
     
 
     const getCurrentBuildingDay = () => {
@@ -156,7 +187,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     return (
         <div className="maincontainer">
             <div className="maininfo">
-                <span className="building-name">{buildingName}</span>
+                <span className="building-name">{buildingName}{crowdIcon}</span>
                 <span className="building-hours">{getBuildingStatus()}</span>
                 <span className="building-address">{buildingAddress}</span>
             </div>
@@ -164,16 +195,11 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             <div className="buildingtags">
                 <span className="tags-text"> Tags: </span>
                 <div className="tag-icons-container">
-                    <Image src="/favicon.ico" alt="Icon 1" width={40} height={40} className="tag-icon" />
-                    <Image src="/favicon.ico" alt="Icon 2" width={40} height={40} className="tag-icon" />
-                    <Image src="/favicon.ico" alt="Icon 3" width={40} height={40} className="tag-icon" />
-                    <Image src="/favicon.ico" alt="Icon 4" width={40} height={40} className="tag-icon" />
-                    <Image src="/favicon.ico" alt="Icon 5" width={40} height={40} className="tag-icon" />
-                    <Image src="/favicon.ico" alt="Icon 6" width={40} height={40} className="tag-icon" />
-                </div>
-
-                <div>
-                    <Image src="/favicon.ico" alt="More Info Icon" width={20} height={20} className="more-info-icon" />
+                    {tagIcons.map((tag, index) =>
+                        tag.show ? (
+                            <tag.component key={index} className="tag-icon" />
+                        ) : null
+                    )}
                 </div>
             </div>
 

@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 15%;
 }
 
 .status-open {
@@ -17,8 +18,11 @@
 }
 
 .building-name {
+    display: flex;
     font-size: 30px;
     font-weight: bold;
+    margin-bottom: 2%;
+    flex-direction: column;
 }
 
 .building-hours {
@@ -61,7 +65,7 @@
 .tags-text {
     margin-right: 5px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .tag-icons-container {
@@ -70,14 +74,13 @@
     flex-wrap: nowrap;
     gap: 5px;
     justify-content: space-evenly;
-    margin-right: 15px;
 }
 
 .tag-icon {
     width: 40px;
     height: 40px;
     object-fit: cover;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .more-info-icon {
