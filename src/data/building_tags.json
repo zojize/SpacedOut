@@ -33,7 +33,7 @@
     "crowd_level": 1
   },
   {
-    "name": "Henry Adminstration Building",
+    "name": "Henry Administration Bldg",
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -44,7 +44,7 @@
     "crowd_level": 1
   },
   {
-    "name": "Literatures, Cultures, and Lingustics Building",
+    "name": "Literatures, Cultures, & Ling",
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -77,7 +77,7 @@
     "crowd_level": 3
   },
   {
-    "name": "Illinois Union",
+    "name": "Illini Union",
     "quiet": false,
     "talkative": true,
     "open_late": true,
@@ -165,7 +165,7 @@
     "crowd_level": 3
   },
   {
-    "name": "Sidney Lu Mechanical Engineering Building",
+    "name": "Sidney Lu Mech Engr Bldg",
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -187,7 +187,7 @@
     "crowd_level": 1
   },
   {
-    "name": "Thomas M. Siebel Center for Computer Science",
+    "name": "Siebel Center for Comp Sci",
     "quiet": false,
     "talkative": true,
     "open_late": true,
@@ -209,7 +209,7 @@
     "crowd_level": 1
   },
   {
-    "name": "Newmark Civil Engineering Laboratory",
+    "name": "Newmark Civil Engineering Bldg",
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -220,7 +220,7 @@
     "crowd_level": 2
   },
   {
-    "name": "Electrical and Computer Engineering Building",
+    "name": "Electrical & Computer Eng Bldg",
     "quiet": false,
     "talkative": true,
     "open_late": true,

@@ -431,6 +431,84 @@
         ],
         "type": "Point"
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Digital Computer Laboratory"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22656487263983,
+          40.113147986907286
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Grainger Engineering Library"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22680991546726,
+          40.11281146869134
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Talbot Laboratory"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22817693080994,
+          40.11221330313441
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mechanical Engineering Laboratory"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22575438848128,
+          40.111809093459506
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Altgeld Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22829266149539,
+          40.1097000659168
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Illini Union"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.22723050676471,
+          40.109265170585076
+        ],
+        "type": "Point"
+      }
     }
   ]
 }
