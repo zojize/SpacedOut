@@ -14,6 +14,7 @@ export default function Page() {
           key={i}
           building={building}/>
       ))}
+      <div className="h-10 w-screen"/>
     </div>
   );
 }

@@ -2,11 +2,11 @@ import { Coffee, VolumeOff, Speech, Moon, Armchair, Coins, User, Users, UserX } 
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
 
-export function Tag({name, state, showName} : {name : any, state : boolean, showName : boolean}) {
+export function Tag({name, showName} : {name : any, showName : boolean}) {
     const icon_size = 20;
 
     return(
-        <div className={`rounded-full flex flex-row gap-x-3 w-fit h-fit p-2 ${state ? "bg-cyan-400 bg-opacity-30" : "bg-black bg-opacity-5"}`}>
+        <div className="rounded-full flex flex-row gap-x-3 w-fit h-fit p-2 bg-black bg-opacity-5">
             {name == 'quiet' && <VolumeOff size={icon_size}/>}
             {name == 'talkative' && <Speech size={icon_size}/>}
             {name == 'open_late' && <Moon size={icon_size}/>}
