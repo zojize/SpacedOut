@@ -3,13 +3,53 @@
 import { Filter } from 'lucide-react';
 import { Drawer } from 'vaul';
 import { Button } from './ui/button';
-import { useState } from 'react';
-import TimePicker from 'react-time-picker'
+import { useEffect, useState } from 'react';
+import TimePicker from 'react-time-picker';
 import { useRouter } from 'next/navigation';
-import { MapPin, Coffee, VolumeOff, Speech, Moon, Armchair, Coins, User, Users, UserX } from 'lucide-react';
+import {
+  MapPin,
+  Coffee,
+  VolumeOff,
+  Speech,
+  Moon,
+  Armchair,
+  Coins,
+  User,
+  Users,
+  UserX,
+} from 'lucide-react';
 import { Table } from './icons/Table';
 import { VendingMachine } from './icons/VendingMachine';
-export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,stime, setSTime, etime, setETime}) {
+
+const availableFilters = [
+  'quiet',
+  'talkative',
+  'open_late',
+  'coffee_shop',
+  'vending machine',
+  'big_tables',
+  'couches',
+] as const;
+
+export function Filters({
+  activeFilters,
+  toggleFilters,
+  crowdLevel,
+  setCrowdLevel,
+  stime,
+  setSTime,
+  etime,
+  setETime,
+}: {
+  activeFilters: Set<string>;
+  toggleFilters: (key: string) => void;
+  crowdLevel: number;
+  setCrowdLevel: (level: number) => void;
+  stime: string | null;
+  setSTime: (time: string | null) => void;
+  etime: string | null;
+  setETime: (time: string | null) => void;
+}) {
   // const [activeFilters, setActiveFilters] = useState({
   //   1: false,
   //   2: false,
@@ -19,17 +59,19 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
   //   6: false,
   //   7: false,
   // });
+  useEffect(() => {
+    console.log(activeFilters);
+  }, [activeFilters]);
   const iconMap = {
-    "quiet": <VolumeOff/>,
-    "talkative": <Speech/>,
-    "open_late": <Moon/>,
-    "coffee_shop": <Coffee/>,
-    "vending machine": <VendingMachine/>,
-    "big_tables": <Table/>,
-    "couches": <Armchair/>,
+    quiet: <VolumeOff />,
+    talkative: <Speech />,
+    open_late: <Moon />,
+    coffee_shop: <Coffee />,
+    'vending machine': <VendingMachine />,
+    big_tables: <Table />,
+    couches: <Armchair />,
   };
 
-  
   const router = useRouter();
   const handleCrowdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCrowdLevel(Number(event.target.value));
@@ -38,11 +80,10 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
   //   setActiveFilters(prevState => ({
   //     ...prevState, [index] : !prevState[index]
   //   })
-      
+
   //   );
   // };
-  const handleClick = () => {
-};
+  const handleClick = () => {};
   return (
     // https://vaul.emilkowal.ski/
     <Drawer.Root direction="right">
@@ -65,12 +106,28 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
         >
           <div className="bg-zinc-50 h-full w-full grow p-5 flex flex-col rounded-[16px]">
             <div className="max-w-md mx-auto">
-              <Drawer.Title style={{ textAlign: 'center', fontSize:'3.5vh'}}>
+              <Drawer.Title style={{ textAlign: 'center', fontSize: '3.5vh' }}>
                 <b>Filter By</b>
               </Drawer.Title>
-              <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignContent:'center' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3vh', marginTop: '4vh', alignItems: 'center' }}>
-                  {Object.keys(activeFilters).map((key) => (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '3vh',
+                    marginTop: '4vh',
+                    alignItems: 'center',
+                  }}
+                >
+                  {availableFilters.map((key) => (
                     <button
                       key={key}
                       onClick={() => toggleFilters(key)}
@@ -78,7 +135,9 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
                         width: '10vh',
                         height: '10vh',
                         borderRadius: '50%',
-                        backgroundColor: activeFilters[key] ? '#ADD8E6' : 'grey',
+                        backgroundColor: activeFilters.has(key)
+                          ? '#ADD8E6'
+                          : 'grey',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -89,9 +148,11 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
                   ))}
                 </div>
 
-                <div style={{marginTop:'5vh'}}>
-                  <h1 style={{ textAlign: 'center', fontSize:'3.5vh'}}><b>Crowd Level?</b></h1>
-                  <div style={{marginTop:'1vh'}}>
+                <div style={{ marginTop: '5vh' }}>
+                  <h1 style={{ textAlign: 'center', fontSize: '3.5vh' }}>
+                    <b>Crowd Level?</b>
+                  </h1>
+                  <div style={{ marginTop: '1vh' }}>
                     <input
                       type="range"
                       min="1"
@@ -102,25 +163,42 @@ export function Filters({activeFilters,toggleFilters,crowdLevel,setCrowdLevel,st
                         width: '100%',
                         appearance: 'none',
                         height: '8px',
-                        backgroundColor: crowdLevel == 3 ? '#FF0000' : crowdLevel == 2 ? '#FFA500' : '#00FF00' ,
+                        backgroundColor:
+                          crowdLevel == 3
+                            ? '#FF0000'
+                            : crowdLevel == 2
+                            ? '#FFA500'
+                            : '#00FF00',
                         borderRadius: '40vh',
                       }}
                     />
                   </div>
                 </div>
-                
-                <h1 style={{ marginTop: '5vh', textAlign: 'center', fontSize:'3.5vh'}}><b>Customize Time?</b></h1>
-                <div style={{display: 'flex', flexDirection: 'row'}}>
-                  <div style={{ marginTop: '1vh', paddingRight:'2vh'}}>
-                    <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>Select a Start Time</h1>
-                    <div style={{alignItems: 'center', paddingLeft:'5vh'}}>
-                      <TimePicker onChange={setSTime} value={stime}/>
+
+                <h1
+                  style={{
+                    marginTop: '5vh',
+                    textAlign: 'center',
+                    fontSize: '3.5vh',
+                  }}
+                >
+                  <b>Customize Time?</b>
+                </h1>
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                  <div style={{ marginTop: '1vh', paddingRight: '2vh' }}>
+                    <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>
+                      Select a Start Time
+                    </h1>
+                    <div style={{ alignItems: 'center', paddingLeft: '5vh' }}>
+                      <TimePicker onChange={setSTime} value={stime} />
                     </div>
                   </div>
                   <div style={{ marginTop: '1vh' }}>
-                    <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>Select a End Time</h1>
-                    <div style={{alignItems: 'center', paddingLeft:'5vh'}}>
-                      <TimePicker onChange={setETime} value={etime}/>
+                    <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>
+                      Select a End Time
+                    </h1>
+                    <div style={{ alignItems: 'center', paddingLeft: '5vh' }}>
+                      <TimePicker onChange={setETime} value={etime} />
                     </div>
                   </div>
                 </div>
