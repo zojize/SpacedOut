@@ -12,7 +12,7 @@ export function BuildingCard({building} : {building : any}) {
     return(
         <div 
             className="relative w-10/12 mx-auto my-5 h-fit px-5 py-5 rounded-md font-medium border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground"
-            // onClick={() => router.push(`/buildinginfo`)}
+            onClick={() => router.push(`/buildinginfo`)}
         >
             <div className="relative w-full h-fit flex flex-row mb-1.5">
                 <h1 className="w-4/5 left-0 top-0 text-lg font-bold">{building.name}</h1>
