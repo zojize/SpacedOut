@@ -37,7 +37,7 @@ export function Filters() {
     // https://vaul.emilkowal.ski/
     <Drawer.Root direction="right">
       <Button
-        className="absolute m-4 right-0 top-0 h-9 w-9 touch-none"
+        className="fixed m-4 right-0 top-0 h-9 w-9 touch-none"
         variant="outline"
         asChild
       >
