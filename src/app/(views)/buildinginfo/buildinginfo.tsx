@@ -5,6 +5,8 @@ import { VolumeOff } from 'lucide-react';
 import { Moon } from 'lucide-react';
 import { Coffee } from 'lucide-react';
 import { Armchair } from 'lucide-react';
+import { User } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
 
@@ -61,12 +63,29 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         }
     };    
 
-    const crowdIcon = tags.crowd_level === 3 ? (
-        <Table />
-    ) : tags.crowd_level === 2 ? (
-        <Table />
-    ) : (
-        <Table />
+    const getCrowdLevelColor = (level: number) => {
+        switch (level) {
+            case 3: return '#ef4444';
+            case 2: return '#f59e0b';
+            case 1: return '#10b981';
+            default: return 'gray';
+        }
+    };
+    
+    const crowdIcon = (
+        <span
+            style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                backgroundColor: getCrowdLevelColor(tags.crowd_level),
+            }}
+        >
+            <User style={{ color: 'white' }} /> {/* Icon color to contrast the background */}
+        </span>
     );
 
     const tagIcons = [
@@ -190,6 +209,9 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 
     return (
         <div className="maincontainer">
+            <button className="back-button" onClick={() => {}}>
+                <ChevronLeft size={24} />
+            </button>
             <div className="maininfo">
                 <span className="building-name">{buildingName}{crowdIcon}</span>
                 <span className="building-hours">{getBuildingStatus()}</span>
