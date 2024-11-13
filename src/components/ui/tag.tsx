@@ -25,16 +25,16 @@ export function Tag({name, showName} : {name : any, showName : boolean}) {
             data-tooltip-content={tag_info[name]}
             data-tooltip-delay-hide={100}
             data-tooltip-place='top'
-            className="rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 bg-black bg-opacity-5"
+            className="border border-input rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 bg-black bg-opacity-5"
             onClick={(e) => e.stopPropagation()}
         >
-            {name == 'quiet' && <VolumeOff size={icon_size}/>}
-            {name == 'talkative' && <Speech size={icon_size}/>}
-            {name == 'open_late' && <Moon size={icon_size}/>}
-            {name == 'coffee_shop' && <Coffee size={icon_size}/>}
+            {name == 'quiet' && <VolumeOff size={icon_size} strokeWidth={1.5}/>}
+            {name == 'talkative' && <Speech size={icon_size} strokeWidth={1.5}/>}
+            {name == 'open_late' && <Moon size={icon_size} strokeWidth={1.5}/>}
+            {name == 'coffee_shop' && <Coffee size={icon_size} strokeWidth={1.5}/>}
             {name == 'big_tables' && <Table width={icon_size} height={icon_size}/>}
-            {name == 'couches' && <Armchair size={icon_size}/>}
-            {name == 'vending_machine' && <VendingMachine width={icon_size} height={icon_size}/>}
+            {name == 'couches' && <Armchair size={icon_size} strokeWidth={1.5}/>}
+            {name == 'vending_machine' && <VendingMachine width={icon_size} height={icon_size} strokeWidth={1.5}/>}
             <Tooltip
                 id="tag-tooltip"
                 // content={tag_info[name]}

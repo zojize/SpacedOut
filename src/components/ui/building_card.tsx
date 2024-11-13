@@ -20,9 +20,12 @@ export function BuildingCard({building} : {building : any}) {
                     <User size={icon_size}/>
                 </div>
             </div>
-            <div className="flex flex-row gap-x-2 items-center mb-4">
+            <div 
+                className="flex flex-row gap-x-2 items-center mb-4"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <MapPin size={icon_size} className="inline"/>
-                <Link href='#' className="font-normal">Address</Link>
+                <Link href='/map' className="font-normal">Address</Link>
             </div>
             <div className="flex flex-row gap-3 items-center flex-wrap">
                 {['quiet', 'talkative', 'open_late', 'coffee_shop', 'big_tables', 'couches', 'vending_machine'].map((tag, i) => (
