@@ -1,6 +1,10 @@
 import React from 'react';
 import './buildinginfo.css';
-// import { CircleHelp } from 'lucide-react';
+import { Speech } from 'lucide-react';
+import { VolumeOff } from 'lucide-react';
+import { Moon } from 'lucide-react';
+import { Coffee } from 'lucide-react';
+import { Armchair } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
 
@@ -66,12 +70,12 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     );
 
     const tagIcons = [
-        { show: tags.open_late, component: Table },
+        { show: tags.open_late, component: Moon },
         { show: tags.big_tables, component: Table },
-        { show: tags.couches, component: Table },
-        { show: tags.quiet, component: Table },
-        { show: tags.talkative, component: Table },
-        { show: tags.coffee_shop, component: VendingMachine },
+        { show: tags.couches, component: Armchair },
+        { show: tags.quiet, component: VolumeOff },
+        { show: tags.talkative, component: Speech },
+        { show: tags.coffee_shop, component: Coffee },
         { show: tags.vending_machine, component: VendingMachine }
     ];
     
