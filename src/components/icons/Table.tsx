@@ -7,7 +7,7 @@ export function Table(props: SVGProps<SVGSVGElement>) {
         xmlns="http://www.w3.org/2000/svg" 
         width="1em" 
         height="1em" 
-        viewBox="2 2 20 20" 
+        viewBox="3 3 18 18" 
         {...props}>
             <path 
                 fill="currentColor" 
