@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 interface BuildingInfoProps {
     buildingName: string;
     buildingAddress: string;
-    hours: { [day: string]: string };
+    hours: { [day: string]: string } | string;
     selectedTime: Date | { start: Date; end: Date };
     tags: {
         quiet: number;
@@ -117,10 +117,20 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 
     const isOpen = () => {
         const dayKey = getCurrentBuildingDay();
-        const todayHours = hours[dayKey];
-        if (!todayHours || todayHours === "LOCKED") return false;
+        const todayHours = hours;
     
-        const [opening, closing] = todayHours.split('-');
+        // Check if hours is a string ("24 hours")
+        if (typeof todayHours === 'string' && todayHours === "24 hours") {
+            return true; // Always open if 24 hours
+        }
+    
+        // Otherwise, assume hours is an object and get the hours for the current day
+        const todayDayHours = typeof todayHours === 'object' ? todayHours[dayKey] : null;
+    
+        // If no hours are set or it's locked, return false
+        if (!todayDayHours || todayDayHours === "LOCKED") return false;
+    
+        const [opening, closing] = todayDayHours.split('-');
         const openTime24 = convertTime(opening, false);
         const closeTime24 = convertTime(closing, false);
         const [openHour, openMinute] = openTime24.split(':').map(Number);
@@ -128,7 +138,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     
         let currentStartHour, currentStartMinute, currentEndHour, currentEndMinute;
     
-        // check if selectedTime is a single date or a range
+        // Check if selectedTime is a single date or a range
         if (selectedTime instanceof Date) {
             currentStartHour = selectedTime.getHours();
             currentStartMinute = selectedTime.getMinutes();
@@ -146,6 +156,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     
         return isAfterOpening && isBeforeClosing;
     };
+    
     
     const isRoomAvailable = (sections: Array<{ time: { start: string; end: string }; days: string[] }>) => {
         const dayKey = getCurrentDay();
@@ -185,16 +196,24 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 
     const getBuildingStatus = () => {
         const dayKey = getCurrentBuildingDay();
-        const todayHours = hours[dayKey];
+        const todayHours = hours;
     
-        if (!todayHours || todayHours === "LOCKED") {
+        // Check if hours is a string ("24 hours")
+        if (typeof todayHours === 'string' && todayHours === "24 hours") {
+            return <span className="status-open" style={{ color: 'green' }}>Open 24 Hours</span>;
+        }
+    
+        // Otherwise, assume hours is an object and get the hours for the current day
+        const todayDayHours = typeof todayHours === 'object' ? todayHours[dayKey] : null;
+        
+        if (!todayDayHours || todayDayHours === "LOCKED") {
             return <span className="status-closed">Closed</span>;
         }
     
-        const [openTime, closeTime] = todayHours.split('-');
+        const [openTime, closeTime] = todayDayHours.split('-');
         const openTimeFormatted = convertTime(openTime, true);
         const closeTimeFormatted = convertTime(closeTime, true);
-    
+        
         return isOpen() ? (
             <>
                 <span className="status-open">Open</span> ⋅ Closes at {closeTimeFormatted}
@@ -205,6 +224,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             </>
         );
     };
+    
     
 
     return (
