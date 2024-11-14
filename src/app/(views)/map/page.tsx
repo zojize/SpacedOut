@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { features as buildings } from '@/data/uiuc_buildings.json';
 import * as tagsArr from '@/data/building_tags.json';
 import dynamic from 'next/dynamic';
+import { useFilters } from '@/hooks/useFilters';
 
 const tags = Object.fromEntries(
   Array.from(tagsArr).map((entry) => [entry.name, entry]),
@@ -16,6 +17,7 @@ export default dynamic(
   () =>
     Promise.resolve(function Page() {
       const router = useRouter();
+      const [filters] = useFilters();
 
       return (
         <>
@@ -33,6 +35,9 @@ export default dynamic(
             >
               {buildings.map(({ geometry, properties: { name } }, i) => {
                 const crowdLevel = tags?.[name]?.crowd_level ?? 1;
+                const isFilteredOut =
+                  filters.size > 0 &&
+                  Array.from(filters).some((filter) => !tags?.[name]?.[filter]);
                 return (
                   <AdvancedMarker
                     key={i}
@@ -41,18 +46,25 @@ export default dynamic(
                       lat: geometry.coordinates[1],
                     }}
                     title={name}
-                    onClick={() => router.push(`/buildinginfo`)}
+                    onClick={() =>
+                      !isFilteredOut && router.push(`/buildinginfo`)
+                    }
                     // onClick={() => console.log(name)}
                   >
                     <Button
                       className={
                         'rounded-full ' +
-                        ['bg-green-500', 'bg-yellow-500', 'bg-red-500'][
-                          crowdLevel - 1
-                        ]
+                        (isFilteredOut
+                          ? 'bg-gray-500'
+                          : ['bg-green-500', 'bg-yellow-500', 'bg-red-500'][
+                              crowdLevel - 1
+                            ])
                       }
                       size="icon"
                       variant="secondary"
+                      disabled={
+                        filters.has('quiet') && (tags?.[name]?.quiet ?? true)
+                      }
                     >
                       <User />
                     </Button>
