@@ -19,6 +19,7 @@ export default function RootLayout({
   const [crowdLevel, setCrowdLevel] = useState<number>(3);
   const [stime, setSTime] = useState<string | null>('10:00');
   const [etime, setETime] = useState<string | null>('11:00');
+  const [day, setDay] = useState<string>('Thursday');
 
   const toggleFilters = (key: string) => {
     setActiveFilters(
@@ -41,6 +42,8 @@ export default function RootLayout({
         setSTime={setSTime}
         etime={etime}
         setETime={setETime}
+        day = {day}
+        setDay = {setDay}
       />
       <Button
         className="fixed m-4 right-0 bottom-0 touch-none "
