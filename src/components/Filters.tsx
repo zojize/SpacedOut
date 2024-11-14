@@ -217,7 +217,7 @@ export function Filters({
                 </div>
                 <select
                   id="day-picker"
-                  value={day}
+                  value={day!}
                   onChange={handleDayChange}
                   style={{ marginTop: '1vh' }}
                 >
