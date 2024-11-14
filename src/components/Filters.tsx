@@ -5,6 +5,7 @@ import { Drawer } from 'vaul';
 import { Button } from './ui/button';
 import { useEffect, useState } from 'react';
 import TimePicker from 'react-time-picker';
+
 import { useRouter } from 'next/navigation';
 import {
   MapPin,
@@ -30,7 +31,15 @@ const availableFilters = [
   'big_tables',
   'couches',
 ] as const;
-
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+] as const;
 export function Filters({
   activeFilters,
   toggleFilters,
@@ -40,6 +49,8 @@ export function Filters({
   setSTime,
   etime,
   setETime,
+  day,
+  setDay
 }: {
   activeFilters: Set<string>;
   toggleFilters: (key: string) => void;
@@ -49,6 +60,8 @@ export function Filters({
   setSTime: (time: string | null) => void;
   etime: string | null;
   setETime: (time: string | null) => void;
+  day: string | null;
+  setDay: (key: string) => void;
 }) {
   // const [activeFilters, setActiveFilters] = useState({
   //   1: false,
@@ -73,6 +86,9 @@ export function Filters({
   const handleCrowdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCrowdLevel(Number(event.target.value));
   };
+  const handleDayChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setDay(event.target.value);
+  };
   // const toggleFilters = (index: number,) => {
   //   setActiveFilters(prevState => ({
   //     ...prevState, [index] : !prevState[index]
@@ -80,7 +96,6 @@ export function Filters({
 
   //   );
   // };
-  const handleClick = () => {};
   return (
     // https://vaul.emilkowal.ski/
     <Drawer.Root direction="right">
@@ -145,8 +160,8 @@ export function Filters({
                   ))}
                 </div>
 
-                <div style={{ marginTop: '5vh' }}>
-                  <h1 style={{ textAlign: 'center', fontSize: '3.5vh' }}>
+                <div style={{ marginTop: '4vh' }}>
+                  <h1 style={{ textAlign: 'center', fontSize: '3vh' }}>
                     <b>Crowd Level?</b>
                   </h1>
                   <div style={{ marginTop: '1vh' }}>
@@ -174,12 +189,12 @@ export function Filters({
 
                 <h1
                   style={{
-                    marginTop: '5vh',
+                    marginTop: '4vh',
                     textAlign: 'center',
-                    fontSize: '3.5vh',
+                    fontSize: '3vh',
                   }}
                 >
-                  <b>Customize Time?</b>
+                  <b>Customize Day and Time?</b>
                 </h1>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <div style={{ marginTop: '1vh', paddingRight: '2vh' }}>
@@ -199,6 +214,18 @@ export function Filters({
                     </div>
                   </div>
                 </div>
+                <select
+                id="day-picker"
+                value={day}
+                onChange={handleDayChange}
+                style={{marginTop:"1vh"}}
+              >
+                {daysOfWeek.map((dayOption) => (
+                  <option key={dayOption} value={dayOption}>
+                    {dayOption}
+                  </option>
+                ))}
+              </select>
               </div>
             </div>
           </div>
