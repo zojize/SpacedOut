@@ -50,7 +50,7 @@ export function Filters({
   etime,
   setETime,
   day,
-  setDay
+  setDay,
 }: {
   activeFilters: Set<string>;
   toggleFilters: (key: string) => void;
@@ -183,6 +183,7 @@ export function Filters({
                             : '#00FF00',
                         borderRadius: '40vh',
                       }}
+                      data-vaul-no-drag
                     />
                   </div>
                 </div>
@@ -215,17 +216,17 @@ export function Filters({
                   </div>
                 </div>
                 <select
-                id="day-picker"
-                value={day}
-                onChange={handleDayChange}
-                style={{marginTop:"1vh"}}
-              >
-                {daysOfWeek.map((dayOption) => (
-                  <option key={dayOption} value={dayOption}>
-                    {dayOption}
-                  </option>
-                ))}
-              </select>
+                  id="day-picker"
+                  value={day}
+                  onChange={handleDayChange}
+                  style={{ marginTop: '1vh' }}
+                >
+                  {daysOfWeek.map((dayOption) => (
+                    <option key={dayOption} value={dayOption}>
+                      {dayOption}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
