@@ -8,6 +8,7 @@ import { features as buildings } from '@/data/uiuc_buildings.json';
 import * as tagsArr from '@/data/building_tags.json';
 import dynamic from 'next/dynamic';
 import { useFilters } from '@/hooks/useFilters';
+import { useEffect, useState } from 'react';
 
 const tags = Object.fromEntries(
   Array.from(tagsArr).map((entry) => [entry.name, entry]),
@@ -18,6 +19,19 @@ export default dynamic(
     Promise.resolve(function Page() {
       const router = useRouter();
       const [filters] = useFilters();
+      const [currentLocation, setCurrentLocation] = useState<null | {
+        lat: number;
+        lng: number;
+      }>(null);
+
+      useEffect(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setCurrentLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        });
+      });
 
       return (
         <>
@@ -33,6 +47,17 @@ export default dynamic(
               disableDefaultUI
               mapId="49ae42fed52588c3"
             >
+              {currentLocation && (
+                <AdvancedMarker
+                  position={currentLocation}
+                  // onClick={() => console.log(name)}
+                >
+                  <div
+                    className="w-4 h-4 bg-blue-500 rounded-full border-2 border-white animate-pulse"
+                    title="Current Location"
+                  />
+                </AdvancedMarker>
+              )}
               {buildings.map(({ geometry, properties: { name } }, i) => {
                 const crowdLevel = tags?.[name]?.crowd_level ?? 1;
                 const isFilteredOut =
