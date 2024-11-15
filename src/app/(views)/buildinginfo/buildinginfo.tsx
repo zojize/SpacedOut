@@ -3,6 +3,7 @@ import './buildinginfo.css';
 import { Speech, VolumeOff, Moon, Coffee, Armchair, User, ChevronLeft } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
+import {Tag} from '@/components/ui/tag';
 import { useRouter } from 'next/navigation';
 
 interface BuildingInfoProps {
@@ -89,13 +90,13 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     );
 
     const tagIcons = [
-        { show: tags.open_late, component: Moon },
-        { show: tags.big_tables, component: Table },
-        { show: tags.couches, component: Armchair },
-        { show: tags.quiet, component: VolumeOff },
-        { show: tags.talkative, component: Speech },
-        { show: tags.coffee_shop, component: Coffee },
-        { show: tags.vending_machine, component: VendingMachine }
+        { show: tags.open_late, name: 'open_late', component: Moon },
+        { show: tags.big_tables, name: 'big_tables', component: Table },
+        { show: tags.couches, name: 'couches', component: Armchair },
+        { show: tags.quiet, name: 'quiet', component: VolumeOff },
+        { show: tags.talkative, name: 'talkative', component: Speech },
+        { show: tags.coffee_shop, name: 'coffee_shop', component: Coffee },
+        { show: tags.vending_machine, name: 'vending_machine', component: VendingMachine }
     ];
     
 
@@ -243,7 +244,12 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                 <div className="tag-icons-container">
                     {tagIcons.map((tag, index) =>
                         tag.show ? (
-                            <tag.component key={index} className="tag-icon" />
+                            <div key={index}>
+                                <Tag 
+                                    name={tag.name} 
+                                    showName={false} 
+                                />
+                            </div>
                         ) : null
                     )}
                 </div>
