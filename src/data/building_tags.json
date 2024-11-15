@@ -1,1 +1,212 @@
-{"Gregory Hall": {"quiet": false, "talkative": false, "open_late": true, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": false, "crowd_level": 1}, "Lincoln Hall": {"quiet": false, "talkative": true, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": true, "vending_machine": true, "crowd_level": 2}, "English Building": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": false, "couches": false, "vending_machine": true, "crowd_level": 1}, "Henry Administration Bldg": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": false, "couches": true, "vending_machine": false, "crowd_level": 1}, "Literatures, Cultures, & Ling": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": true, "vending_machine": false, "crowd_level": 1}, "Davenport Hall": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": false, "couches": false, "vending_machine": false, "crowd_level": 1}, "Noyes Laboratory": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": true, "crowd_level": 3}, "Illini Union": {"quiet": false, "talkative": true, "open_late": true, "coffee_shop": true, "big_tables": true, "couches": true, "vending_machine": true, "crowd_level": 1}, "Altgeld Hall": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": false, "couches": false, "vending_machine": true, "crowd_level": 1}, "Natural History Building": {"quiet": false, "talkative": true, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": true, "vending_machine": false, "crowd_level": 2}, "Everitt Laboratory": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": false, "crowd_level": 2}, "Engineering Hall": {"quiet": true, "talkative": false, "open_late": true, "coffee_shop": false, "big_tables": false, "couches": false, "vending_machine": true, "crowd_level": 1}, "Mechanical Engineering Laboratory": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": false, "crowd_level": 1}, "Talbot Laboratory": {"quiet": true, "talkative": false, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": true, "crowd_level": 2}, "Grainger Engineering Library": {"quiet": true, "talkative": true, "open_late": true, "coffee_shop": true, "big_tables": true, "couches": true, "vending_machine": true, "crowd_level": 3}, "Sidney Lu Mech Engr Bldg": {"quiet": false, "talkative": true, "open_late": false, "coffee_shop": true, "big_tables": true, "couches": true, "vending_machine": true, "crowd_level": 3}, "Transportation Building": {"quiet": true, "talkative": true, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": false, "crowd_level": 1}, "Siebel Center for Comp Sci": {"quiet": false, "talkative": true, "open_late": true, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": true, "crowd_level": 2}, "Digital Computer Laboratory": {"quiet": false, "talkative": true, "open_late": false, "coffee_shop": false, "big_tables": false, "couches": false, "vending_machine": true, "crowd_level": 1}, "Newmark Civil Engineering Bldg": {"quiet": false, "talkative": true, "open_late": false, "coffee_shop": false, "big_tables": true, "couches": false, "vending_machine": true, "crowd_level": 2}, "Electrical & Computer Eng Bldg": {"quiet": false, "talkative": true, "open_late": true, "coffee_shop": true, "big_tables": true, "couches": false, "vending_machine": true, "crowd_level": 2}}
+{
+  "Gregory Hall": {
+    "quiet": false,
+    "talkative": false,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Lincoln Hall": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": true,
+    "crowd_level": 2
+  },
+  "English Building": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 1
+  },
+  "Henry Administration Bldg": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": true,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Literatures, Cultures, & Ling": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Davenport Hall": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Noyes Laboratory": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 3
+  },
+  "Illini Union": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": true,
+    "crowd_level": 1
+  },
+  "Altgeld Hall": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 1
+  },
+  "Natural History Building": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Everitt Laboratory": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Engineering Hall": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 1
+  },
+  "Mechanical Engineering Laboratory": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Talbot Laboratory": {
+    "quiet": true,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 2
+  },
+  "Grainger Engineering Library": {
+    "quiet": true,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": true,
+    "crowd_level": 3
+  },
+  "Sidney Lu Mech Engr Bldg": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": true,
+    "vending_machine": true,
+    "crowd_level": 3
+  },
+  "Transportation Building": {
+    "quiet": true,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 1
+  },
+  "Siebel Center for Comp Sci": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 2
+  },
+  "Digital Computer Laboratory": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 1
+  },
+  "Newmark Civil Engineering Bldg": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 2
+  },
+  "Electrical & Computer Eng Bldg": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 2
+  }
+}
