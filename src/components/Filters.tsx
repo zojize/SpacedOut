@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { Table } from './icons/Table';
 import { VendingMachine } from './icons/VendingMachine';
+import type { FilterTypes } from '@/hooks/building-filters';
 
 const availableFilters = [
   'quiet',
@@ -53,7 +54,7 @@ export function Filters({
   setDay,
 }: {
   activeFilters: Set<string>;
-  toggleFilters: (key: string) => void;
+  toggleFilters: (key: FilterTypes) => void;
   crowdLevel: number;
   setCrowdLevel: (level: number) => void;
   stime: string | null;

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { features as buildings } from '@/data/uiuc_buildings.json';
 import * as tagsArr from '@/data/building_tags.json';
 import dynamic from 'next/dynamic';
-import { useFilters } from '@/hooks/useFilters';
+import { useCrowdLevel, useFilters } from '@/hooks/building-filters';
 import { useEffect, useState } from 'react';
 
 const tags = Object.fromEntries(
@@ -23,6 +23,7 @@ export default dynamic(
         lat: number;
         lng: number;
       }>(null);
+      const [crowdLevel] = useCrowdLevel();
 
       useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -59,10 +60,12 @@ export default dynamic(
                 </AdvancedMarker>
               )}
               {buildings.map(({ geometry, properties: { name } }, i) => {
-                const crowdLevel = tags?.[name]?.crowd_level ?? 1;
                 const isFilteredOut =
-                  filters.size > 0 &&
-                  Array.from(filters).some((filter) => !tags?.[name]?.[filter]);
+                  (filters.size > 0 &&
+                    Array.from(filters).some(
+                      (filter) => !tags?.[name]?.[filter],
+                    )) ||
+                  (tags?.[name]?.crowd_level ?? 1) > crowdLevel;
                 return (
                   <AdvancedMarker
                     key={i}
@@ -82,7 +85,7 @@ export default dynamic(
                         (isFilteredOut
                           ? 'bg-gray-500'
                           : ['bg-green-500', 'bg-yellow-500', 'bg-red-500'][
-                              crowdLevel - 1
+                              (tags?.[name]?.crowd_level ?? 1) - 1
                             ])
                       }
                       size="icon"
