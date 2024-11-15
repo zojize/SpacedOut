@@ -68,37 +68,19 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     router.back();
   };
 
-  const convertTime = (time: string, to12Hour: boolean = true) => {
-    if (time.length === 4) {
-      time = time.slice(0, 2) + ':00' + time.slice(2); // "7AM" -> "7:00AM"
-    }
-
-    if (time.includes(':') && time.length === 5) {
-      // this may break things... but works for now
-      return time; // return time as is if already formatted
-    }
-
-    const [hour, minutePart] = time.slice(0, -2).split(':');
-    const period = time.slice(-2); // "AM" or "PM"
-    const isPM = period === 'PM';
-    const hourNum = parseInt(hour, 10);
-    const minute = minutePart || '00';
-
-    const hour24 =
-      isPM && hourNum !== 12
-        ? hourNum + 12
-        : !isPM && hourNum === 12
-        ? 0
-        : hourNum;
-
+  const convertTime = (time: string, to12Hour: boolean = true): string => {
+    // Ensure time is properly formatted as "HH:mm"
+    const [hourStr, minute] = time.split(':');
+    const hour24 = parseInt(hourStr, 10);
+  
     if (to12Hour) {
-      const hour12 = hour24 % 12 || 12;
-      const formattedMinute = minute.padStart(2, '0');
-      const periodString = hour24 >= 12 ? 'PM' : 'AM';
-      return `${hour12}:${formattedMinute} ${periodString}`;
-    } else {
-      return `${hour24}:${minute.padStart(2, '0')}`;
+      const hour12 = hour24 % 12 || 12; // Convert to 12-hour format
+      const period = hour24 >= 12 ? 'PM' : 'AM';
+      return `${hour12}:${minute.padStart(2, '0')} ${period}`;
     }
+  
+    // Return 24-hour format
+    return `${hour24.toString().padStart(2, '0')}:${minute.padStart(2, '0')}`;
   };
 
   const getCrowdLevelColor = (level: number) => {
