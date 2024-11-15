@@ -1,7 +1,7 @@
 [
     {
       "name": "Gregory Hall",
-      "location": "",
+      "address":"810 S Wright St",
       "quiet": 0,
       "talkative": 0,
       "open_late": 1,
@@ -13,7 +13,7 @@
     },
     {
       "name": "Lincoln Hall",
-      "location": "",
+      "address":"702 S Wright St",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -25,7 +25,7 @@
     },
     {
       "name": "English Building",
-      "location": "",
+      "address":"608 S Wright St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -37,7 +37,7 @@
     },
     {
       "name": "Henry Adminstration Building",
-      "location": "",
+      "address":"506 S Wright St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -49,7 +49,7 @@
     },
     {
       "name": "Literatures, Cultures, and Lingustics Building",
-      "location": "",
+      "address": "707 S Mathews Ave",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -61,7 +61,7 @@
     },
     {
       "name": "Davenport Hall",
-      "location": "",
+      "address": "607 S Mathews Ave",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -73,7 +73,7 @@
     },
     {
       "name": "Noyes Laboratory",
-      "location": "",
+      "address": "505 S Mathews Ave",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -84,8 +84,8 @@
       "crowd_level": 3
     },
     {
-      "name": "Illinois Union",
-      "location": "",
+      "name": "Illini Union",
+      "address": "1401 W Green St",
       "quiet": 0,
       "talkative": 1,
       "open_late": 1,
@@ -97,7 +97,7 @@
     },
     {
       "name": "Altgeld Hall",
-      "location": "",
+      "address": "1409 W Green St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -109,7 +109,7 @@
     },
     {
       "name": "Natural History Building",
-      "location": "",
+      "address": "1301 W Green St",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -121,7 +121,7 @@
     },
     {
       "name": "Everitt Laboratory",
-      "location": "",
+      "address": "1406 W Green St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -133,7 +133,7 @@
     },
     {
       "name": "Engineering Hall",
-      "location": "",
+      "address": "1308 W Green St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 1,
@@ -144,8 +144,8 @@
       "crowd_level": 1
     },
     {
-      "name": "Mechanical Engineering Laboratory",
-      "location": "",
+      "name": "Sidney Lu Mechanical Engineering Building",
+      "address": "1206 W Green St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -157,7 +157,7 @@
     },
     {
       "name": "Talbot Laboratory",
-      "location": "",
+      "address": "",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -167,21 +167,10 @@
       "vending_machine": 1,
       "crowd_level": 2
     },
-    {
-      "name": "Grainger Engineering Library",
-      "location": "",
-      "quiet": 1,
-      "talkative": 1,
-      "open_late": 1,
-      "coffee_shop": 1,
-      "big_tables": 1,
-      "couches": 1,
-      "vending_machine": 1,
-      "crowd_level": 3
-    },
+    
     {
       "name": "Sidney Lu Mechanical Engineering Building",
-      "location": "",
+      "address": "",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -193,7 +182,7 @@
     },
     {
       "name": "Transportation Building",
-      "location": "",
+      "address": "",
       "quiet": 1,
       "talkative": 1,
       "open_late": 0,
@@ -205,7 +194,7 @@
     },
     {
       "name": "Thomas M. Siebel Center for Computer Science",
-      "location": "",
+      "address": "",
       "quiet": 0,
       "talkative": 1,
       "open_late": 1,
@@ -217,7 +206,7 @@
     },
     {
       "name": "Digital Computer Laboratory",
-      "location": "",
+      "address": "",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -229,7 +218,7 @@
     },
     {
       "name": "Newmark Civil Engineering Laboratory",
-      "location": "",
+      "address": "",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -240,8 +229,8 @@
       "crowd_level": 2
     },
     {
-      "name": "Electrical and Computer Engineering Building",
-      "location": "",
+      "name": "Electrical & Computer Eng Bldg",
+      "address": "",
       "quiet": 0,
       "talkative": 1,
       "open_late": 1,

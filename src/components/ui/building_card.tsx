@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 import { Tag } from '@/components/ui/tag';
 import { MapPin, User, SquareArrowOutUpRight } from 'lucide-react';
@@ -12,7 +13,7 @@ export function BuildingCard({building} : {building : any}) {
     return(
         <div 
             className="relative w-10/12 mx-auto my-5 h-fit px-5 py-5 rounded-md font-medium border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground"
-            onClick={() => router.push(`/buildinginfo`)}
+            onClick={() => router.push(`/buildinginfo/${encodeURIComponent(building.name)}`)}
         >
             {/* crowdedness */}
             <div className={`absolute right-5 top-5 rounded-full flex flex-row gap-x-3 w-fit h-fit p-2 bg-opacity-40 ${['bg-green-500', 'bg-yellow-500', 'bg-red-500'][building.crowd_level - 1]}`}>
@@ -31,11 +32,11 @@ export function BuildingCard({building} : {building : any}) {
 
             {/* address */}
             <a href='/map'
-                className="flex flex-row gap-x-1 items-center mb-4"
+                className="flex flex-row gap-x-1 items-center mb-4 w-fit"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* <MapPin size={icon_size} className="inline"/> */}
-                <p className="font-normal text-gray-500 w-fit inline">Address</p>
+                <p className="font-normal text-gray-500 w-fit inline">{building.address ? building.address : "Address"}</p>
                 <SquareArrowOutUpRight className="text-gray-500" size={icon_size-4} strokeWidth={1.5}/>
             </a>
 
