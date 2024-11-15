@@ -15,14 +15,14 @@ export function BuildingCard({building} : {building : any}) {
             onClick={() => router.push(`/buildinginfo`)}
         >
             {/* crowdedness */}
-            {/* <div className={`absolute right-5 top-5 rounded-full flex flex-row gap-x-3 w-fit h-fit p-2 bg-opacity-40 ${['bg-green-500', 'bg-yellow-500', 'bg-red-500'][building.crowd_level - 1]}`}>
+            <div className={`absolute right-5 top-5 rounded-full flex flex-row gap-x-3 w-fit h-fit p-2 bg-opacity-40 ${['bg-green-500', 'bg-yellow-500', 'bg-red-500'][building.crowd_level - 1]}`}>
                 <User size={icon_size}/>
-            </div> */}
+            </div>
 
             {/* alternative crowdedness */}
-            <div className={`absolute right-5 top-5 rounded-md flex flex-row gap-x-3 w-fit h-fit py-1 px-2 bg-opacity-30 ${['bg-green-500', 'bg-yellow-500', 'bg-red-500'][building.crowd_level - 1]}`}>
+            {/* <div className={`absolute right-5 top-5 rounded-md flex flex-row gap-x-3 w-fit h-fit py-1 px-2 bg-opacity-30 ${['bg-green-500', 'bg-yellow-500', 'bg-red-500'][building.crowd_level - 1]}`}>
                 <p className={`font-normal text-sm ${['text-green-600', 'text-yellow-600', 'text-red-600'][building.crowd_level - 1]}`}>80% full</p>
-            </div>
+            </div> */}
             
             {/* building name */}
             <div className="w-full h-fit flex flex-row mb-0.5">
