@@ -2,10 +2,15 @@
 
 import { Filters } from '@/components/Filters';
 import { Button } from '@/components/ui/button';
-import { useFilters } from '@/hooks/useFilters';
+import {
+  useCrowdLevel,
+  useFilters,
+  type FilterTypes,
+} from '@/hooks/building-filters';
 import { List } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 
 export default function RootLayout({
   children,
@@ -16,12 +21,12 @@ export default function RootLayout({
   const pathname = usePathname();
 
   const [activeFilters, setActiveFilters] = useFilters();
-  const [crowdLevel, setCrowdLevel] = useState<number>(3);
+  const [crowdLevel, setCrowdLevel] = useCrowdLevel();
   const [stime, setSTime] = useState<string | null>('10:00');
   const [etime, setETime] = useState<string | null>('11:00');
   const [day, setDay] = useState<string>('Thursday');
 
-  const toggleFilters = (key: string) => {
+  const toggleFilters = (key: FilterTypes) => {
     setActiveFilters(
       (prev) =>
         new Set(
@@ -42,8 +47,8 @@ export default function RootLayout({
         setSTime={setSTime}
         etime={etime}
         setETime={setETime}
-        day = {day}
-        setDay = {setDay}
+        day={day}
+        setDay={setDay}
       />
       <Button
         className="fixed m-4 right-0 bottom-0 touch-none "

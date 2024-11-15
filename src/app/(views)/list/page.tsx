@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { BuildingCard } from '@/components/ui/building_card';
-import { useFilters } from '@/hooks/useFilters';
+import { useFilters } from '@/hooks/building-filters';
 import buildings from '@/data/tagging.json';
 
 export default function Page() {

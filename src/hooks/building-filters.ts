@@ -13,3 +13,7 @@ export const useFilters = () =>
     serializer: filters => JSON.stringify(Array.from(filters)),
     deserializer: filters => new Set(JSON.parse(filters)), 
   })          
+
+
+export const useCrowdLevel = () => 
+  useLocalStorage<number>('crowd-level', 3)

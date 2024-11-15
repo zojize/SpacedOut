@@ -1,6 +1,5 @@
-[
-  {
-    "name": "Gregory Hall",
+{
+  "Gregory Hall": {
     "quiet": false,
     "talkative": false,
     "open_late": true,
@@ -10,8 +9,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Lincoln Hall",
+  "Lincoln Hall": {
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -21,8 +19,7 @@
     "vending_machine": true,
     "crowd_level": 2
   },
-  {
-    "name": "English Building",
+  "English Building": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -32,8 +29,7 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  {
-    "name": "Henry Administration Bldg",
+  "Henry Administration Bldg": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -43,8 +39,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Literatures, Cultures, & Ling",
+  "Literatures, Cultures, & Ling": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -54,8 +49,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Davenport Hall",
+  "Davenport Hall": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -65,8 +59,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Noyes Laboratory",
+  "Noyes Laboratory": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -76,8 +69,7 @@
     "vending_machine": true,
     "crowd_level": 3
   },
-  {
-    "name": "Illini Union",
+  "Illini Union": {
     "quiet": false,
     "talkative": true,
     "open_late": true,
@@ -87,8 +79,7 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  {
-    "name": "Altgeld Hall",
+  "Altgeld Hall": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -98,8 +89,7 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  {
-    "name": "Natural History Building",
+  "Natural History Building": {
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -109,8 +99,7 @@
     "vending_machine": false,
     "crowd_level": 2
   },
-  {
-    "name": "Everitt Laboratory",
+  "Everitt Laboratory": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -120,8 +109,7 @@
     "vending_machine": false,
     "crowd_level": 2
   },
-  {
-    "name": "Engineering Hall",
+  "Engineering Hall": {
     "quiet": true,
     "talkative": false,
     "open_late": true,
@@ -131,8 +119,7 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  {
-    "name": "Mechanical Engineering Laboratory",
+  "Mechanical Engineering Laboratory": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -142,8 +129,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Talbot Laboratory",
+  "Talbot Laboratory": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -153,8 +139,7 @@
     "vending_machine": true,
     "crowd_level": 2
   },
-  {
-    "name": "Grainger Engineering Library",
+  "Grainger Engineering Library": {
     "quiet": true,
     "talkative": true,
     "open_late": true,
@@ -164,8 +149,7 @@
     "vending_machine": true,
     "crowd_level": 3
   },
-  {
-    "name": "Sidney Lu Mech Engr Bldg",
+  "Sidney Lu Mech Engr Bldg": {
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -175,8 +159,7 @@
     "vending_machine": true,
     "crowd_level": 3
   },
-  {
-    "name": "Transportation Building",
+  "Transportation Building": {
     "quiet": true,
     "talkative": true,
     "open_late": false,
@@ -186,8 +169,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  {
-    "name": "Siebel Center for Comp Sci",
+  "Siebel Center for Comp Sci": {
     "quiet": false,
     "talkative": true,
     "open_late": true,
@@ -197,8 +179,7 @@
     "vending_machine": true,
     "crowd_level": 2
   },
-  {
-    "name": "Digital Computer Laboratory",
+  "Digital Computer Laboratory": {
     "quiet": false,
     "talkative": true,
     "open_late": false,
@@ -208,19 +189,17 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  {
-    "name": "Newmark Civil Engineering Bldg",
+  "Newmark Civil Engineering Bldg": {
     "quiet": false,
     "talkative": true,
     "open_late": false,
     "coffee_shop": false,
     "big_tables": true,
     "couches": false,
-    "vending_machine": 2,
+    "vending_machine": true,
     "crowd_level": 2
   },
-  {
-    "name": "Electrical & Computer Eng Bldg",
+  "Electrical & Computer Eng Bldg": {
     "quiet": false,
     "talkative": true,
     "open_late": true,
@@ -229,5 +208,15 @@
     "couches": false,
     "vending_machine": true,
     "crowd_level": 2
+  },
+  "Campus Instructional Facility": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 3
   }
-]
+}
