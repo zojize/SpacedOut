@@ -208,5 +208,15 @@
     "couches": false,
     "vending_machine": true,
     "crowd_level": 2
+  },
+  "Campus Instructional Facility": {
+    "quiet": false,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 3
   }
 }
