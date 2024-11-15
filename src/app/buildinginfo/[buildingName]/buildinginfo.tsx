@@ -44,7 +44,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 }) => {
   const router = useRouter();
 
-  const rooms = buildings[buildingName].rooms;
+  const rooms = buildings[buildingName]?.rooms;
   const hours = Object.fromEntries(
     Object.entries(buildings[buildingName].hours).map(([k, v]) => [
       {
@@ -342,19 +342,20 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             </div>
           )
         }
-
-        <div className="roomscontainer">
-          <span className="rooms-text"> Currently Open Rooms: </span>
-          <div className="roomslist">
-            {Object.entries(rooms)
-              .filter(([, { sections }]) => isRoomAvailable(sections))
-              .map(([roomNumber]) => (
-                <div key={roomNumber} className="room">
-                  {roomNumber}
-                </div>
-              ))}
+        {rooms && (
+          <div className="roomscontainer">
+            <span className="rooms-text"> Currently Open Rooms: </span>
+            <div className="roomslist">
+              {Object.entries(rooms)
+                .filter(([, { sections }]) => isRoomAvailable(sections))
+                .map(([roomNumber]) => (
+                  <div key={roomNumber} className="room">
+                    {roomNumber}
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );
