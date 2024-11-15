@@ -7,7 +7,7 @@ import {
   useFilters,
   type FilterTypes,
 } from '@/hooks/building-filters';
-import { List } from 'lucide-react';
+import { List, Map } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
@@ -55,8 +55,15 @@ export default function RootLayout({
         variant="outline"
         onClick={() => router.push(pathname.endsWith('map') ? '/list' : '/map')}
       >
-        <List />
-        {pathname.endsWith('map') ? 'List' : 'Map'}
+        {pathname.endsWith('map') ? (
+          <>
+            <List /> List
+          </>
+        ) : (
+          <>
+            <Map /> Map
+          </>
+        )}
       </Button>
     </>
   );
