@@ -44,8 +44,6 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
 }) => {
   const router = useRouter();
 
-  console.log('buildingName:', buildingName);
-
   const rooms = buildings[buildingName].rooms;
   const hours = Object.fromEntries(
     Object.entries(buildings[buildingName].hours).map(([k, v]) => [
@@ -65,8 +63,6 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
   const tags =
     allBuildingTags[buildingName as keyof typeof allBuildingTags] ??
     defaultBuildingTags;
-
-  console.log('tags: ', tags);
 
   const handleBackClick = () => {
     router.back();
