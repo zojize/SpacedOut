@@ -27,7 +27,7 @@ const availableFilters = [
   'talkative',
   'open_late',
   'coffee_shop',
-  'vending machine',
+  'vending_machine',
   'big_tables',
   'couches',
 ] as const;
@@ -77,7 +77,7 @@ export function Filters({
     talkative: <Speech />,
     open_late: <Moon />,
     coffee_shop: <Coffee />,
-    'vending machine': <VendingMachine />,
+    vending_machine: <VendingMachine />,
     big_tables: <Table />,
     couches: <Armchair />,
   };
