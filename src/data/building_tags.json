@@ -216,7 +216,7 @@
     "coffee_shop": false,
     "big_tables": true,
     "couches": false,
-    "vending_machine": 2,
+    "vending_machine": true,
     "crowd_level": 2
   },
   {
