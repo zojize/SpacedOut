@@ -16,9 +16,19 @@ const tag_info = {
     'vending_machine' : 'This space has a vending machine'
 }
 
+const icon_size = 22;
+const stroke_width = 1.5;
+const iconMap = {
+    quiet: <VolumeOff size={icon_size} strokeWidth={stroke_width+0.1} viewBox='-2 -2 28 28'/>,
+    talkative: <Speech size={icon_size} strokeWidth={stroke_width}/>,
+    open_late: <Moon size={icon_size} strokeWidth={stroke_width}/>,
+    coffee_shop: <Coffee size={icon_size} strokeWidth={stroke_width}/>,
+    vending_machine: <VendingMachine width={icon_size} height={icon_size}/>,
+    big_tables: <Table width={icon_size} height={icon_size}/>,
+    couches: <Armchair size={icon_size} strokeWidth={stroke_width}/>,
+};
+
 export function Tag({name, showName} : {name : string, showName : boolean}) {
-    const icon_size = 22;
-    const stroke_width = 1.5;
 
     return(
         <div 
@@ -29,13 +39,7 @@ export function Tag({name, showName} : {name : string, showName : boolean}) {
             className={`border border-input rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 bg-black bg-opacity-5 items-center`}
             onClick={(e) => e.stopPropagation()}
         >
-            {name == 'quiet' && <VolumeOff size={icon_size} strokeWidth={stroke_width+0.1} viewBox='-2 -2 28 28'/>}
-            {name == 'talkative' && <Speech size={icon_size} strokeWidth={stroke_width}/>}
-            {name == 'open_late' && <Moon size={icon_size} strokeWidth={stroke_width}/>}
-            {name == 'coffee_shop' && <Coffee size={icon_size} strokeWidth={stroke_width}/>}
-            {name == 'big_tables' && <Table width={icon_size} height={icon_size}/>}
-            {name == 'couches' && <Armchair size={icon_size} strokeWidth={stroke_width}/>}
-            {name == 'vending_machine' && <VendingMachine width={icon_size} height={icon_size}/>}
+            {iconMap[name]}
             <Tooltip
                 id="tag-tooltip"
                 // content={tag_info[name]}
