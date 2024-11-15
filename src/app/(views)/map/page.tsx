@@ -5,14 +5,10 @@ import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps';
 import { User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { features as buildings } from '@/data/uiuc_buildings.json';
-import * as tagsArr from '@/data/building_tags.json';
+import tags from '@/data/building_tags.json';
 import dynamic from 'next/dynamic';
 import { useCrowdLevel, useFilters } from '@/hooks/building-filters';
 import { useEffect, useState } from 'react';
-
-const tags = Object.fromEntries(
-  Array.from(tagsArr).map((entry) => [entry.name, entry]),
-);
 
 export default dynamic(
   () =>
@@ -60,12 +56,13 @@ export default dynamic(
                 </AdvancedMarker>
               )}
               {buildings.map(({ geometry, properties: { name } }, i) => {
+                const buildingName = name as keyof typeof tags;
                 const isFilteredOut =
                   (filters.size > 0 &&
                     Array.from(filters).some(
-                      (filter) => !tags?.[name]?.[filter],
+                      (filter) => !tags[buildingName][filter],
                     )) ||
-                  (tags?.[name]?.crowd_level ?? 1) > crowdLevel;
+                  tags[buildingName].crowd_level > crowdLevel;
                 return (
                   <AdvancedMarker
                     key={i}
@@ -75,7 +72,8 @@ export default dynamic(
                     }}
                     title={name}
                     onClick={() =>
-                      !isFilteredOut && router.push(`/buildinginfo`)
+                      !isFilteredOut &&
+                      router.push(`/buildinginfo/${encodeURIComponent(name)}`)
                     }
                     // onClick={() => console.log(name)}
                   >
@@ -85,13 +83,14 @@ export default dynamic(
                         (isFilteredOut
                           ? 'bg-gray-500'
                           : ['bg-green-500', 'bg-yellow-500', 'bg-red-500'][
-                              (tags?.[name]?.crowd_level ?? 1) - 1
+                              tags[buildingName].crowd_level - 1
                             ])
                       }
                       size="icon"
                       variant="secondary"
                       disabled={
-                        filters.has('quiet') && (tags?.[name]?.quiet ?? true)
+                        filters.has('quiet') &&
+                        (tags[buildingName].quiet ?? true)
                       }
                     >
                       <User />
