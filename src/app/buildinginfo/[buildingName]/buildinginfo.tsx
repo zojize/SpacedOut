@@ -8,7 +8,6 @@ import {
   Moon,
   Coffee,
   Armchair,
-  User,
   ChevronLeft,
 } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
@@ -18,7 +17,10 @@ import { useRouter } from 'next/navigation';
 import { buildings } from '@/data/filtered_buildings.json';
 import allBuildingTags from '@/data/building_tags.json';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+// import { Card } from '@/components/ui/card';
+import { IconPhUsersThree } from '@/components/icons/IconPhUsersThree'
+import { IconPhUsers } from '@/components/icons/IconPhUsers'
+import { IconPhUser } from '@/components/icons/IconPhUser'
 
 interface BuildingInfoProps {
   buildingName: keyof typeof buildings;
@@ -96,6 +98,19 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     }
   };
 
+  const getCrowdLevelIcon = (level: number) => {
+    switch (level) {
+      case 3:
+        return <IconPhUsersThree style={{ color: 'black' }} />;
+      case 2:
+        return <IconPhUsers style={{ color: 'black' }} />;
+      case 1:
+        return <IconPhUser style={{ color: 'black' }} />;
+      default:
+        return null;
+    }
+  };
+
   const crowdIcon = (
     <span
       style={{
@@ -108,7 +123,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         backgroundColor: getCrowdLevelColor(tags.crowd_level),
       }}
     >
-      <User style={{ color: 'black' }} />
+      {getCrowdLevelIcon(tags.crowd_level)}
     </span>
   );
 
