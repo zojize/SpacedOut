@@ -341,7 +341,23 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         }
         {rooms && (
           <div className="roomscontainer">
-            <span className="rooms-text"> Currently Open Rooms: </span>
+            <span className="rooms-text">
+              <span className="rooms-title">Open Rooms</span>
+              <br />
+              <span className="rooms-time">
+                {selectedTime instanceof Date
+                  ? `${convertTime(
+                      selectedTime.toTimeString().slice(0, 5)
+                    )} - ${convertTime(
+                      new Date(selectedTime.getTime() + 60 * 60 * 1000)
+                        .toTimeString()
+                        .slice(0, 5)
+                    )}`
+                  : `${convertTime(
+                      selectedTime.start.toTimeString().slice(0, 5)
+                    )} - ${convertTime(selectedTime.end.toTimeString().slice(0, 5))}`}
+              </span>
+          </span>
             <div className="roomslist">
               {Object.entries(rooms)
                 .filter(([, { sections }]) => isRoomAvailable(sections))
