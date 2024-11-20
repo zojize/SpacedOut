@@ -46,10 +46,6 @@
     margin-bottom: 5%;
 }
 
-.rooms-text {
-    font-weight: bold;
-    font-size: 20px;
-}
 
 
 .buildingtags {
@@ -117,3 +113,14 @@
     border: none;
     cursor: pointer;
 }
+
+.rooms-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .rooms-time {
+    font-size: 0.95rem;
+    color:dimgrey;
+    font-weight: bold;
+  }

@@ -8,12 +8,12 @@ export type FilterTypes = 'quiet'
                         | 'big_tables'
                         | 'couches';
 
-export const useFilters = () => 
+export const useFilters = () =>
    useLocalStorage('filters', new Set<FilterTypes>, {
     serializer: filters => JSON.stringify(Array.from(filters)),
     deserializer: filters => new Set(JSON.parse(filters)), 
-  })          
+  })
 
 
-export const useCrowdLevel = () => 
+export const useCrowdLevel = () =>
   useLocalStorage<number>('crowd-level', 3)

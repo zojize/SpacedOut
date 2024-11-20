@@ -8,7 +8,6 @@ import {
   Moon,
   Coffee,
   Armchair,
-  User,
   ChevronLeft,
 } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
@@ -18,7 +17,10 @@ import { useRouter } from 'next/navigation';
 import { buildings } from '@/data/filtered_buildings.json';
 import allBuildingTags from '@/data/building_tags.json';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+// import { Card } from '@/components/ui/card';
+import { IconPhUsersThree } from '@/components/icons/IconPhUsersThree'
+import { IconPhUsers } from '@/components/icons/IconPhUsers'
+import { IconPhUser } from '@/components/icons/IconPhUser'
 
 interface BuildingInfoProps {
   buildingName: keyof typeof buildings;
@@ -96,6 +98,19 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     }
   };
 
+  const getCrowdLevelIcon = (level: number) => {
+    switch (level) {
+      case 3:
+        return <IconPhUsersThree style={{ color: 'black' }} />;
+      case 2:
+        return <IconPhUsers style={{ color: 'black' }} />;
+      case 1:
+        return <IconPhUser style={{ color: 'black' }} />;
+      default:
+        return null;
+    }
+  };
+
   const crowdIcon = (
     <span
       style={{
@@ -108,7 +123,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         backgroundColor: getCrowdLevelColor(tags.crowd_level),
       }}
     >
-      <User style={{ color: 'black' }} />
+      {getCrowdLevelIcon(tags.crowd_level)}
     </span>
   );
 
@@ -326,7 +341,23 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         }
         {rooms && (
           <div className="roomscontainer">
-            <span className="rooms-text"> Currently Open Rooms: </span>
+            <span className="rooms-text">
+              <span className="rooms-title">Open Rooms</span>
+              <br />
+              <span className="rooms-time">
+                {selectedTime instanceof Date
+                  ? `${convertTime(
+                      selectedTime.toTimeString().slice(0, 5)
+                    )} - ${convertTime(
+                      new Date(selectedTime.getTime() + 60 * 60 * 1000)
+                        .toTimeString()
+                        .slice(0, 5)
+                    )}`
+                  : `${convertTime(
+                      selectedTime.start.toTimeString().slice(0, 5)
+                    )} - ${convertTime(selectedTime.end.toTimeString().slice(0, 5))}`}
+              </span>
+          </span>
             <div className="roomslist">
               {Object.entries(rooms)
                 .filter(([, { sections }]) => isRoomAvailable(sections))
