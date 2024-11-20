@@ -33,10 +33,18 @@ export default dynamic(
         lng: number;
       }>(null);
       const [crowdLevel] = useCrowdLevel();
+      const [defaultLocation, setDefaultLocation] = useState({
+        lat: 40.11383687791036,
+        lng: -88.2247336803035,
+      });
 
       useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
           setCurrentLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+          setDefaultLocation({
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           });
@@ -51,8 +59,8 @@ export default dynamic(
           >
             <Map
               style={{ width: '100vw', height: '100vh' }}
-              defaultCenter={{ lng: -88.2247336803035, lat: 40.11383687791036 }}
-              defaultZoom={15}
+              defaultCenter={defaultLocation}
+              defaultZoom={16}
               gestureHandling={'greedy'}
               disableDefaultUI
               mapId="49ae42fed52588c3"
