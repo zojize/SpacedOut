@@ -121,12 +121,13 @@ export function Filters({
         <Drawer.Content
           className="right-2 top-2 bottom-2 fixed z-10 outline-none w-[310px] flex"
           style={
-            { '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties
+            { '--initial-transform': 'calc(100%)', overflow:'hidden'
+            } as React.CSSProperties
           }
         >
-          <div className="bg-zinc-50 h-full w-full grow p-5 flex flex-col rounded-[16px]">
+          <div className="bg-zinc-50 h-700px w-full p-5 rounded-[16px]" style={{overflowY: 'auto'}}>
             <div className="max-w-md mx-auto">
-              <Drawer.Title style={{ textAlign: 'center', fontSize: '3.5vh', marginBottom:'-2vh'}}>
+              <Drawer.Title style={{fontSize: '25px', marginBottom:'-10px'}}>
                 <b>Filter By</b>
               </Drawer.Title>
               <div
@@ -142,8 +143,8 @@ export function Filters({
                   style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '2vh',
-                    marginTop: '2vh',
+                    gap: '20px',
+                    marginTop: '20px',
                     alignItems: 'center',
 
                   }}
@@ -153,8 +154,8 @@ export function Filters({
                       key={key}
                       onClick={() => toggleFilters(key)}
                       style={{
-                        width: '8vh',
-                        height: '8vh',
+                        width: '70px',
+                        height: '70px',
                         borderRadius: '50%',
                         backgroundColor: activeFilters.has(key)
                           ? '#ADD8E6'
@@ -169,11 +170,11 @@ export function Filters({
                   ))}
                 </div>
 
-                <div style={{ marginTop: '3vh' }}>
-                  <h1 style={{ textAlign: 'center', fontSize: '3vh' }}>
-                    <b>Crowd Level?</b>
+                <div style={{ marginTop: '40px' }}>
+                  <h1 style={{fontSize: '25px' }}>
+                    <b>Crowdedness?</b>
                   </h1>
-                  <div style={{ marginTop: '1vh' }}>
+                  <div style={{ marginTop: '10px' }}>
                     <input
                       type="range"
                       min="1"
@@ -183,7 +184,7 @@ export function Filters({
                       style={{
                         width: '100%',
                         appearance: 'none',
-                        height: '8px',
+                        height: '10px',
                         backgroundColor:
                           crowdLevel == 3
                             ? '#FF0000'
@@ -199,12 +200,11 @@ export function Filters({
 
                 <h1
                   style={{
-                    marginTop: '4vh',
-                    textAlign: 'center',
-                    fontSize: '3vh',
+                    marginTop: '30px',
+                    fontSize: '25px',
                   }}
                 >
-                  <b>Customize Day and Time?</b>
+                  <b>Customize Day and Time</b>
                 </h1>
                 <div style={{alignContent:'center'}}>
                   {/* <div style={{ marginTop: '1vh', marginBottom:'2vh'}}>
@@ -220,16 +220,16 @@ export function Filters({
                     </div>
                   </div> */}
                   <div style={{ marginTop: '1vh' }}>
-                    <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>
+                    {/* <h1 style={{ textAlign: 'center', fontSize: '2vh' }}>
                       Select a End Time
-                    </h1>
+                    </h1> */}
                     <div style={{paddingLeft:"8%"}}>
                       {/* <TimePicker 
                         clockIcon={null}
                         disableClock={true}
                         onChange={setETime} 
                         value={etime} /> */}
-                        <TimePicker.RangePicker defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} 
+                        <TimePicker.RangePicker defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} allowClear={false} allowEmpty={false}
                         onChange={(times) => {
                           if (times) {
                             setSTime(times[0]?.format(format) || null);
@@ -246,7 +246,7 @@ export function Filters({
                   id="day-picker"
                   value={day!}
                   onChange={handleDayChange}
-                  style={{ marginTop: '1vh' }}
+                  style={{ marginTop: '20px' }}
                 >
                   {daysOfWeek.map((dayOption) => (
                     <option key={dayOption} value={dayOption}>
@@ -255,6 +255,23 @@ export function Filters({
                   ))}
                 </select>
               </div>
+
+              <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Drawer.Close asChild>
+        <button
+          style={{
+            backgroundColor: '#ADD8E6',
+            color: 'black',
+            fontWeight:'bold',
+            borderRadius: '8px',
+            padding: '20px'
+          }}
+        >
+          Close
+        </button>
+      </Drawer.Close>
+    </div>
+
             </div>
           </div>
         </Drawer.Content>
