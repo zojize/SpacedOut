@@ -25,7 +25,6 @@ import { IconPhUser } from '@/components/icons/IconPhUser';
 
 interface BuildingInfoProps {
   buildingName: keyof typeof buildings;
-  buildingAddress: string;
   selectedTime: Date | { start: Date; end: Date };
 }
 
@@ -42,12 +41,12 @@ const defaultBuildingTags = {
 
 const BuildingInfo: React.FC<BuildingInfoProps> = ({
   buildingName,
-  buildingAddress,
   selectedTime,
 }) => {
   const router = useRouter();
 
   const rooms = buildings[buildingName]?.rooms;
+  const address = buildings[buildingName]?.address;
   const hours = buildings[buildingName]?.hours
     ? Object.fromEntries(
         Object.entries(buildings[buildingName].hours).map(([k, v]) => [
@@ -261,9 +260,10 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
           sectionEndMinute <= currentStartMinute)
       );
 
-      if (overlaps) return false;
+      if (overlaps) {
+        return false;
+      }
     }
-
     return true;
   };
 
@@ -319,13 +319,16 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         <div className="maininfo">
           <span className="building-name">
             {buildingName}
-            {crowdIcon}
           </span>
+          <span className="crowd-icon">
+          {crowdIcon}
+          </span>
+          
           <span className="building-hours">{getBuildingStatus()}</span>
           <span className="building-address">
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              buildingAddress
+              address
             )}`}
             className="address-container"
             onClick={(e) => e.stopPropagation()}
@@ -333,7 +336,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             rel="noopener noreferrer"
           >
             <p className="address-text">
-              {buildingAddress || "Address"}
+              {address || "Address"}
             </p>
             <SquareArrowOutUpRight
               className="address-icon"
@@ -360,38 +363,68 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             </div>
           )
         }
-        {rooms && (
-          <div className="roomscontainer">
-            <span className="rooms-text">
-              <span className="rooms-title">Open Rooms</span>
-              <br />
-              <span className="rooms-time">
+        {rooms && (() => {
+          const availableRooms = Object.entries(rooms).filter(
+            ([, { sections }]) => isRoomAvailable(sections)
+          );
+
+          if (availableRooms.length > 0) {
+            return (
+              <div className="roomscontainer">
+                <span className="rooms-text">
+                  <span className="rooms-title">Open Rooms</span>
+                  <br />
+                  <span className="rooms-time">
+                    {selectedTime instanceof Date
+                      ? `${convertTime(
+                          selectedTime.toTimeString().slice(0, 5),
+                        )} - ${convertTime(
+                          new Date(selectedTime.getTime() + 60 * 60 * 1000)
+                            .toTimeString()
+                            .slice(0, 5),
+                        )}`
+                      : `${convertTime(
+                          selectedTime.start.toTimeString().slice(0, 5),
+                        )} - ${convertTime(
+                          selectedTime.end.toTimeString().slice(0, 5),
+                        )}`}
+                  </span>
+                </span>
+                <div className="roomslist">
+                  {availableRooms.map(([roomNumber]) => (
+                    <div key={roomNumber} className="room">
+                      {roomNumber}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <div className="no-rooms-message">
+                <span className="rooms-title">No Open Rooms</span>
+                <br />
+                <span className="rooms-time">
                 {selectedTime instanceof Date
                   ? `${convertTime(
                       selectedTime.toTimeString().slice(0, 5),
-                    )} - ${convertTime(
+                    )} to ${convertTime(
                       new Date(selectedTime.getTime() + 60 * 60 * 1000)
                         .toTimeString()
                         .slice(0, 5),
                     )}`
                   : `${convertTime(
                       selectedTime.start.toTimeString().slice(0, 5),
-                    )} - ${convertTime(
+                    )} to ${convertTime(
                       selectedTime.end.toTimeString().slice(0, 5),
                     )}`}
-              </span>
-            </span>
-            <div className="roomslist">
-              {Object.entries(rooms)
-                .filter(([, { sections }]) => isRoomAvailable(sections))
-                .map(([roomNumber]) => (
-                  <div key={roomNumber} className="room">
-                    {roomNumber}
-                  </div>
-                ))}
-            </div>
-          </div>
-        )}
+                  </span>
+              </div>
+            );
+          }
+        })()}
+
+
       </div>
     </>
   );

@@ -12,7 +12,6 @@ export default function Page() {
   return (
     <BuildingInfo
       buildingName={decodeURIComponent(buildingName) as keyof typeof buildings} //placeholder
-      buildingAddress="1405 W Springfield Ave, Urbana, IL 61801" //placeholder
       //hours="24 hours"
       // either specify a start and end date, or just a single date
       selectedTime={

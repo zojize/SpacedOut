@@ -17,17 +17,26 @@
     font-weight: bold;
 }
 
+
 .building-name {
     display: flex;
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     flex-direction: column;
 }
+
+.crowd-icon {
+    align-self: start;
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
 
 .building-hours {
     font-size: 15px;
     align-self: start;
+    margin-bottom: 2%;
 }
 
 .building-address {
@@ -56,6 +65,7 @@
     background-color: white;
     padding: 10px;
     justify-content: center;
+    margin-bottom: 2%;
 }
 
 .tags-text {
@@ -123,6 +133,10 @@
     color:dimgrey;
     font-weight: bold;
   }
+  
+  .rooms-text {
+    margin-bottom: 2%;
+  }
 
   .building-address {
     display: flex;
@@ -152,4 +166,8 @@
     height: 0.8rem;
     flex-shrink: 0;
   }
-  
+
+.no-rooms-message {
+    font-weight: 400;
+    font-size: 30px;
+}
