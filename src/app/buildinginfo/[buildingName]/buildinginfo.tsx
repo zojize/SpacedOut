@@ -19,9 +19,9 @@ import { buildings } from '@/data/filtered_buildings.json';
 import allBuildingTags from '@/data/building_tags.json';
 import { Button } from '@/components/ui/button';
 // import { Card } from '@/components/ui/card';
-import { IconPhUsersThree } from '@/components/icons/IconPhUsersThree'
-import { IconPhUsers } from '@/components/icons/IconPhUsers'
-import { IconPhUser } from '@/components/icons/IconPhUser'
+import { IconPhUsersThree } from '@/components/icons/IconPhUsersThree';
+import { IconPhUsers } from '@/components/icons/IconPhUsers';
+import { IconPhUser } from '@/components/icons/IconPhUser';
 
 interface BuildingInfoProps {
   buildingName: keyof typeof buildings;
@@ -48,21 +48,28 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
   const router = useRouter();
 
   const rooms = buildings[buildingName]?.rooms;
-  const hours = Object.fromEntries(
-    Object.entries(buildings[buildingName].hours).map(([k, v]) => [
-      {
-        monday: 'M-TH',
-        tuesday: 'M-TH',
-        wednesday: 'M-TH',
-        // for now this will overwrite everything... whatever i guess
-        thursday: 'M-TH',
-        friday: 'F',
-        saturday: 'SAT',
-        sunday: 'SUN',
-      }[k],
-      v.open == null ? 'LOCKED' : `${v.open}-${v.close}`,
-    ]),
-  );
+  const hours = buildings[buildingName]?.hours
+    ? Object.fromEntries(
+        Object.entries(buildings[buildingName].hours).map(([k, v]) => [
+          {
+            monday: 'M-TH',
+            tuesday: 'M-TH',
+            wednesday: 'M-TH',
+            // for now this will overwrite everything... whatever i guess
+            thursday: 'M-TH',
+            friday: 'F',
+            saturday: 'SAT',
+            sunday: 'SUN',
+          }[k],
+          v.open == null ? 'LOCKED' : `${v.open}-${v.close}`,
+        ]),
+      )
+    : {
+        'M-TH': '08:00-22:00',
+        F: '08:00-22:00',
+        SAT: '08:00-22:00',
+        SUN: '08:00-22:00',
+      };
   const tags =
     allBuildingTags[buildingName as keyof typeof allBuildingTags] ??
     defaultBuildingTags;
@@ -75,13 +82,13 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     // Ensure time is properly formatted as "HH:mm"
     const [hourStr, minute] = time.split(':');
     const hour24 = parseInt(hourStr, 10);
-  
+
     if (to12Hour) {
       const hour12 = hour24 % 12 || 12; // Convert to 12-hour format
       const period = hour24 >= 12 ? 'PM' : 'AM';
       return `${hour12}:${minute.padStart(2, '0')} ${period}`;
     }
-  
+
     // Return 24-hour format
     return `${hour24.toString().padStart(2, '0')}:${minute.padStart(2, '0')}`;
   };
@@ -361,17 +368,19 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
               <span className="rooms-time">
                 {selectedTime instanceof Date
                   ? `${convertTime(
-                      selectedTime.toTimeString().slice(0, 5)
+                      selectedTime.toTimeString().slice(0, 5),
                     )} - ${convertTime(
                       new Date(selectedTime.getTime() + 60 * 60 * 1000)
                         .toTimeString()
-                        .slice(0, 5)
+                        .slice(0, 5),
                     )}`
                   : `${convertTime(
-                      selectedTime.start.toTimeString().slice(0, 5)
-                    )} - ${convertTime(selectedTime.end.toTimeString().slice(0, 5))}`}
+                      selectedTime.start.toTimeString().slice(0, 5),
+                    )} - ${convertTime(
+                      selectedTime.end.toTimeString().slice(0, 5),
+                    )}`}
               </span>
-          </span>
+            </span>
             <div className="roomslist">
               {Object.entries(rooms)
                 .filter(([, { sections }]) => isRoomAvailable(sections))

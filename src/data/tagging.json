@@ -157,7 +157,7 @@
     },
     {
       "name": "Talbot Laboratory",
-      "address": "",
+      "address": "104 S Wright St",
       "quiet": 1,
       "talkative": 0,
       "open_late": 0,
@@ -170,7 +170,7 @@
     
     {
       "name": "Sidney Lu Mechanical Engineering Building",
-      "address": "",
+      "address": "1206 W Green St",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -182,7 +182,7 @@
     },
     {
       "name": "Transportation Building",
-      "address": "",
+      "address": "104 S Mathews Ave",
       "quiet": 1,
       "talkative": 1,
       "open_late": 0,
@@ -194,7 +194,7 @@
     },
     {
       "name": "Thomas M. Siebel Center for Computer Science",
-      "address": "",
+      "address": "201 N Goodwin Ave",
       "quiet": 0,
       "talkative": 1,
       "open_late": 1,
@@ -206,7 +206,7 @@
     },
     {
       "name": "Digital Computer Laboratory",
-      "address": "",
+      "address": "1304 W Springfield Ave",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -218,7 +218,7 @@
     },
     {
       "name": "Newmark Civil Engineering Laboratory",
-      "address": "",
+      "address": "205 N Mathews Ave",
       "quiet": 0,
       "talkative": 1,
       "open_late": 0,
@@ -230,7 +230,7 @@
     },
     {
       "name": "Electrical & Computer Eng Bldg",
-      "address": "",
+      "address": "306 N Wright St",
       "quiet": 0,
       "talkative": 1,
       "open_late": 1,
