@@ -5,12 +5,52 @@ import { Field, Input } from '@headlessui/react'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
 import { BuildingCard } from '@/components/ui/building_card';
-import { useFilters } from '@/hooks/building-filters';
-import buildings from '@/data/tagging.json';
+import { useFilters, useCrowdLevel } from '@/hooks/building-filters';
+import allBuildingTags from '@/data/building_tags.json';
+import { features as buildings } from '@/data/uiuc_buildings.json';
+
+/*
+TO DO:
+- change crowdedness level icons
+- add time and crowdedness level filtering
+- change coloring for crowdedness level
+*/
+
+
+/*
+buildings.map(({ geometry, properties: { name } }, i) => {
+  const buildingName = name as keyof typeof allBuildingTags;
+  const buildingTags =
+    allBuildingTags[buildingName] ?? defaultBuildingTags;
+  const isFilteredOut =
+    (filters.size > 0 &&
+      Array.from(filters).some(
+        (filter) => !buildingTags[filter],
+      )) ||
+    buildingTags.crowd_level > crowdLevel;
+
+  const crowd = [
+    { color: 'bg-green-500', icon: IconPhUser },
+    { color: 'bg-yellow-500', icon: IconPhUsers },
+    { color: 'bg-red-500', icon: IconPhUsersThree },
+  ][buildingTags.crowd_level - 1];
+*/
 
 export default function Page() {
   const router = useRouter();
   const [filters] = useFilters();
+  const [crowdLevel] = useCrowdLevel();
+  const defaultBuildingTags = {
+    crowd_level: 1,
+    quiet: false,
+    talkative: false,
+    open_late: false,
+    coffee_shop: false,
+    big_tables: false,
+    couches: false,
+    vending_machine: false,
+  };
+
   let resultsExist = false;
 
   const [query, setQuery] = useState('');
@@ -19,7 +59,7 @@ export default function Page() {
     query === ''
       ? buildings
       : buildings.filter((building) => {
-          return building.name.toLowerCase().includes(query.toLowerCase())
+          return building.properties.name.toLowerCase().includes(query.toLowerCase())
         })
   
   return (
@@ -35,14 +75,17 @@ export default function Page() {
         </div>
       </Field>
       
-      {filteredBuildings.map((building, i) => {
-        const isFilteredOut = filters.size > 0 && Array.from(filters).some((filter) => !building?.[filter]);
+      {filteredBuildings.map(({ properties: { name } }, i) => {
+        const buildingName = name as keyof typeof allBuildingTags;
+        const buildingTags = allBuildingTags[buildingName] ?? defaultBuildingTags;
+        const isFilteredOut = filters.size > 0 && Array.from(filters).some((filter) => !buildingTags?.[filter]) || buildingTags.crowd_level > crowdLevel;
         if (!isFilteredOut) {
           resultsExist = true;
           return(
             <BuildingCard 
               key={i}
-              building={building}/>
+              buildingName={buildingName}
+              buildingTags={buildingTags}/>
           );
         }
       })}

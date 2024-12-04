@@ -105,10 +105,11 @@ export default dynamic(
                       !isFilteredOut &&
                       router.push(`/buildinginfo/${encodeURIComponent(name)}`)
                     }
+                    className="bg-white rounded-full"
                   >
                     <Button
                       className={
-                        'rounded-full ' +
+                        'rounded-full bg-opacity-40 ' +
                         (isFilteredOut ? 'bg-gray-500' : crowd.color)
                       }
                       size="icon"
