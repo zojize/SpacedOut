@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Literatures, Cultures, & Ling"
+        "name": "Literatures, Cultures, and Linguistics Building"
       },
       "geometry": {
         "coordinates": [
@@ -121,7 +121,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Henry Administration Bldg"
+        "name": "Henry Administration Building"
       },
       "geometry": {
         "coordinates": [
@@ -251,7 +251,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Sidney Lu Mech Engr Bldg"
+        "name": "Sidney Lu Mechanical Engineering Building"
       },
       "geometry": {
         "coordinates": [
@@ -342,7 +342,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Siebel Center for Comp Sci"
+        "name": "Thomas M. Siebel Center for Computer Science"
       },
       "geometry": {
         "coordinates": [
@@ -409,7 +409,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Newmark Civil Engineering Bldg"
+        "name": "Newmark Civil Engineering Laboratory"
       },
       "geometry": {
         "coordinates": [

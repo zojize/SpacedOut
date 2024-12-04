@@ -29,7 +29,7 @@
     "vending_machine": true,
     "crowd_level": 1
   },
-  "Henry Administration Bldg": {
+  "Henry Administration Building": {
     "quiet": true,
     "talkative": false,
     "open_late": false,

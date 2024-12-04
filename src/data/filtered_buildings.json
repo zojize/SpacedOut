@@ -1,7 +1,7 @@
 {
   "last_updated": "2024-11-05T18:48:53.465618",
   "buildings": {
-    "Literatures, Cultures, & Ling": {
+    "Literatures, Cultures, and Linguistics Building": {
       "rooms": {
         "G32": {
           "sections": [
@@ -5530,7 +5530,8 @@
       "coordinates": {
         "longitude": -88.2261774023806,
         "latitude": 40.1062796749417
-      }
+      },
+      "address": "707 S Mathews Ave, Urbana, IL 61801"
     },
     "Engineering Hall": {
       "rooms": {
@@ -6437,7 +6438,8 @@
       "coordinates": {
         "longitude": -88.22697738439302,
         "latitude": 40.110860577936535
-      }
+      },
+      "address": "1308 W Green St, Urbana, IL 61801"
     },
     "Education Building": {
       "rooms": {
@@ -8799,7 +8801,8 @@
       "coordinates": {
         "longitude": -88.22963848024656,
         "latitude": 40.10208788895545
-      }
+      },
+      "address": "1310 S 6th St, Champaign, IL 61820"
     },
     "Wohlers Hall": {
       "rooms": {
@@ -10942,7 +10945,8 @@
       "coordinates": {
         "longitude": -88.22986247815153,
         "latitude": 40.103616754740074
-      }
+      },
+      "address": "1206 S 6th St, Champaign, IL 61820"
     },
     "Gregory Hall": {
       "rooms": {
@@ -14680,7 +14684,8 @@
       "coordinates": {
         "longitude": -88.22809719732614,
         "latitude": 40.10568121305013
-      }
+      },
+      "address": "810 S Wright St, Urbana, IL 61801"
     },
     "Armory": {
       "rooms": {
@@ -18630,7 +18635,8 @@
       "coordinates": {
         "longitude": -88.23197530788798,
         "latitude": 40.104770081147365
-      }
+      },
+      "address": "505 E Armory Ave, Champaign, IL 61820"
     },
     "David Kinley Hall": {
       "rooms": {
@@ -23715,7 +23721,8 @@
       "coordinates": {
         "longitude": -88.22835896455715,
         "latitude": 40.103619414916636
-      }
+      },
+      "address": "1407 W Gregory Dr, Urbana, IL 61801"
     },
     "Lincoln Hall": {
       "rooms": {
@@ -26965,7 +26972,8 @@
       "coordinates": {
         "longitude": -88.22816881447793,
         "latitude": 40.10663949376405
-      }
+      },
+      "address": "702 S Wright St, Urbana, IL 61801"
     },
     "Turner Hall": {
       "rooms": {
@@ -27910,9 +27918,10 @@
       "coordinates": {
         "longitude": -88.22420967253437,
         "latitude": 40.10294421570373
-      }
+      },
+      "address": "1102 S Goodwin Ave, Urbana, IL 61801"
     },
-    "Henry Administration Bldg": {
+    "Henry Administration Building": {
       "rooms": {
         "137": {
           "sections": [
@@ -29592,7 +29601,8 @@
       "coordinates": {
         "longitude": -88.22825099142705,
         "latitude": 40.108368163803135
-      }
+      },
+      "address": "506 S Wright St, Urbana, IL 61801"
     },
     "Architecture Building": {
       "rooms": {
@@ -30328,7 +30338,8 @@
       "coordinates": {
         "longitude": -88.22908555167923,
         "latitude": 40.103305927572364
-      }
+      },
+      "address": "608 Lorado Taft Dr, Champaign, IL 61820"
     },
     "Bevier Hall": {
       "rooms": {
@@ -31730,7 +31741,8 @@
       "coordinates": {
         "longitude": -88.22427210505388,
         "latitude": 40.10481905594051
-      }
+      },
+      "address": "905 S Goodwin Ave, Urbana, IL 61801"
     },
     "Mumford Hall": {
       "rooms": {
@@ -32744,7 +32756,8 @@
       "coordinates": {
         "longitude": -88.22603917391396,
         "latitude": 40.10363530771548
-      }
+      },
+      "address": "1301 W Gregory Dr, Urbana, IL 61801"
     },
     "Agricultural Engr Sciences Bld": {
       "rooms": {
@@ -33365,7 +33378,8 @@
       "coordinates": {
         "longitude": -88.22634716351016,
         "latitude": 40.10162249908899
-      }
+      },
+      "address": "1304 W Pennsylvania Ave, Urbana, IL 61801"
     },
     "Campus Instructional Facility": {
       "rooms": {
@@ -37712,7 +37726,8 @@
       "coordinates": {
         "longitude": -88.22829043072797,
         "latitude": 40.11247391774697
-      }
+      },
+      "address": "1405 W Springfield Ave, Urbana, IL 61801"
     },
     "Business Instructional Fac": {
       "rooms": {
@@ -40882,7 +40897,8 @@
       "coordinates": {
         "longitude": -88.23089287860155,
         "latitude": 40.10380417961363
-      }
+      },
+      "address": "515 E Gregory Dr, Champaign, IL 61820"
     },
     "Transportation Building": {
       "rooms": {
@@ -42198,7 +42214,8 @@
       "coordinates": {
         "longitude": -88.22520881656054,
         "latitude": 40.111706378625456
-      }
+      },
+      "address": "104 S Mathews Ave, Urbana, IL 61801"
     },
     "English Building": {
       "rooms": {
@@ -45434,7 +45451,8 @@
       "coordinates": {
         "longitude": -88.22816881342536,
         "latitude": 40.10758905293639
-      }
+      },
+      "address": "608 S Wright St, Urbana, IL 61801"
     },
     "Davenport Hall": {
       "rooms": {
@@ -48317,9 +48335,10 @@
       "coordinates": {
         "longitude": -88.22619165071363,
         "latitude": 40.10721998832133
-      }
+      },
+      "address": "607 S Mathews Ave, Urbana, IL 61801"
     },
-    "Sidney Lu Mech Engr Bldg": {
+    "Sidney Lu Mechanical Engineering Building": {
       "rooms": {
         "1043": {
           "sections": [
@@ -50841,7 +50860,8 @@
       "coordinates": {
         "longitude": -88.22472942010009,
         "latitude": 40.11083302586286
-      }
+      },
+      "address": "1206 W Green St, Urbana, IL 61801"
     },
     "Noyes Laboratory": {
       "rooms": {
@@ -54706,7 +54726,8 @@
       "coordinates": {
         "longitude": -88.22609502081586,
         "latitude": 40.10844985188464
-      }
+      },
+      "address": "505 S Mathews Ave, Urbana, IL 61801"
     },
     "Psychology Building": {
       "rooms": {
@@ -56966,7 +56987,8 @@
       "coordinates": {
         "longitude": -88.22995127301564,
         "latitude": 40.10747990727842
-      }
+      },
+      "address": "603 E Daniel St, Champaign, IL 61820"
     },
     "Everitt Laboratory": {
       "rooms": {
@@ -58000,7 +58022,8 @@
       "coordinates": {
         "longitude": -88.22826365912114,
         "latitude": 40.110911863857666
-      }
+      },
+      "address": "1406 W Green St, Urbana, IL 61801"
     },
     "Loomis Laboratory": {
       "rooms": {
@@ -59857,7 +59880,8 @@
       "coordinates": {
         "longitude": -88.22321734496734,
         "latitude": 40.11099600622066
-      }
+      },
+      "address": "1110 W Green St, Urbana, IL 61801"
     },
     "Electrical & Computer Eng Bldg": {
       "rooms": {
@@ -63269,7 +63293,8 @@
       "coordinates": {
         "longitude": -88.22804895675479,
         "latitude": 40.114955854028864
-      }
+      },
+      "address": "306 N Wright St, Urbana, IL 61801"
     },
     "Music Building": {
       "rooms": {
@@ -65254,9 +65279,555 @@
       "coordinates": {
         "longitude": -88.2232567447939,
         "latitude": 40.10631667329207
-      }
+      },
+      "address": "1114 W Nevada St, Urbana, IL 61801"
     },
-    "Siebel Center for Comp Sci": {
+
+    "Altgeld Hall": {
+      "rooms": { },
+      "hours": {
+        "monday": {
+          "open": null,
+          "close": null
+        },
+        "tuesday": {
+          "open": null,
+          "close": null
+        },
+        "wednesday": {
+          "open": null,
+          "close": null
+        },
+        "thursday": {
+          "open": null,
+          "close": null
+        },
+        "friday": {
+          "open": null,
+          "close": null
+        },
+        "saturday": {
+          "open": null,
+          "close": null
+        },
+        "sunday": {
+          "open": null,
+          "close": null
+        }
+      },
+      "address": "1409 W Green St, Urbana, IL 61801"
+    }, 
+    "Talbot Laboratory": {
+      "rooms": { 
+        "101B": {
+          "sections": [
+            {
+              "course": "NPRE 415",
+              "time": {
+                "start": "17:00",
+                "end": "20:50"
+              },
+              "days": [
+                "R"
+              ]
+            },
+            {
+              "course": "NPRE 415",
+              "time": {
+                "start": "12:00",
+                "end": "15:50"
+              },
+              "days": [
+                "F"
+              ]
+            }
+          ]
+        },
+        "201": {
+          "sections": [
+            {
+              "course": "CEE 300",
+              "time": {
+                "start": "10:00",
+                "end": "11:50"
+              },
+              "days": [
+                "M",
+                "T",
+                "W"
+              ]
+            },
+            {
+              "course": "CEE 300",
+              "time": {
+                "start": "13:00",
+                "end": "14:50"
+              },
+              "days": [
+                "T"
+              ]
+            },
+            {
+              "course": "CEE 300",
+              "time": {
+                "start": "17:00",
+                "end": "18:50"
+              },
+              "days": [
+                "W"
+              ]
+            },
+            {
+              "course": "CEE 300",
+              "time": {
+                "start": "08:00",
+                "end": "09:50"
+              },
+              "days": [
+                "F"
+              ]
+            },
+            {
+              "course": "CEE 300",
+              "time": {
+                "start": "14:00",
+                "end": "15:50"
+              },
+              "days": [
+                "M"
+              ]
+            }
+          ]
+        },
+        "200": {
+          "sections": [
+            {
+              "course": "SE 312",
+              "time": {
+                "start": "10:00",
+                "end": "11:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "SE 312",
+              "time": {
+                "start": "18:00",
+                "end": "19:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            }
+          ]
+        },
+        "126": {
+          "sections": [
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "10:00",
+                "end": "11:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "12:00",
+                "end": "13:50"
+              },
+              "days": [
+                "M",
+                "W"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "15:00",
+                "end": "16:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "17:00",
+                "end": "18:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "08:00",
+                "end": "09:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "13:00",
+                "end": "14:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "ME 310",
+              "time": {
+                "start": "11:00",
+                "end": "12:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            }
+          ]
+        },
+        "1051": {
+          "sections": [
+            {
+              "course": "AFST 338",
+              "time": {
+                "start": "13:00",
+                "end": "14:20"
+              },
+              "days": [
+                "M",
+                "W"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "08:00",
+                "end": "08:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "F"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "09:00",
+                "end": "09:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "F"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "10:00",
+                "end": "10:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "F"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "08:00",
+                "end": "09:20"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "09:30",
+                "end": "10:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "11:00",
+                "end": "11:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "F"
+              ]
+            },
+            {
+              "course": "CMN 101",
+              "time": {
+                "start": "15:30",
+                "end": "16:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "CMN 211",
+              "time": {
+                "start": "11:00",
+                "end": "12:20"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "CMN 338",
+              "time": {
+                "start": "12:00",
+                "end": "12:50"
+              },
+              "days": [
+                "M",
+                "W",
+                "F"
+              ]
+            },
+            {
+              "course": "CMN 496",
+              "time": {
+                "start": "12:30",
+                "end": "13:50"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            },
+            {
+              "course": "HIST 103",
+              "time": {
+                "start": "13:00",
+                "end": "13:50"
+              },
+              "days": [
+                "F"
+              ]
+            },
+            {
+              "course": "HIST 338",
+              "time": {
+                "start": "13:00",
+                "end": "14:20"
+              },
+              "days": [
+                "M",
+                "W"
+              ]
+            },
+            {
+              "course": "JOUR 215",
+              "time": {
+                "start": "15:00",
+                "end": "15:50"
+              },
+              "days": [
+                "M"
+              ]
+            },
+            {
+              "course": "JOUR 501",
+              "time": {
+                "start": "15:00",
+                "end": "15:50"
+              },
+              "days": [
+                "M"
+              ]
+            },
+            {
+              "course": "MACS 166",
+              "time": {
+                "start": "15:00",
+                "end": "16:50"
+              },
+              "days": [
+                "W"
+              ]
+            },
+            {
+              "course": "PSYC 100",
+              "time": {
+                "start": "14:00",
+                "end": "15:20"
+              },
+              "days": [
+                "T",
+                "R"
+              ]
+            }
+          ]
+        }
+      },
+      "hours": {
+        "monday": {
+          "open": "07:00",
+          "close": "17:30"
+        },
+        "tuesday": {
+          "open": "07:00",
+          "close": "17:30"
+        },
+        "wednesday": {
+          "open": "07:00",
+          "close": "17:30"
+        },
+        "thursday": {
+          "open": "07:00",
+          "close": "17:30"
+        },
+        "friday": {
+          "open": "07:00",
+          "close": "17:30"
+        },
+        "saturday": {
+          "open": null,
+          "close": null
+        },
+        "sunday": {
+          "open": null,
+          "close": null
+        }
+      },
+      "address": "104 S Wright St, Urbana, IL 61801"
+    }, 
+    "Illini Union": {
+      "rooms": { },
+      "hours": {
+        "monday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "tuesday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "wednesday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "thursday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "friday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "saturday": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sunday": {
+          "open": "07:00",
+          "close": "23:00"
+        }
+      },
+      "address": "1401 W Green St, Urbana, IL 61801"
+    }, 
+    "Digital Computer Laboratory": {
+      "rooms": {
+        "1265": {
+          "sections": []
+        },
+        "1310": {
+          "sections": []
+        },
+        "1320": {
+          "sections": [
+            {
+              "course": "CS 465",
+              "time": {
+                "start": "9:30",
+                "end": "10:45"
+              },
+              "days": [
+                "M",
+                "W"
+              ]
+            }
+          ]
+        }
+      },
+      "hours": {
+        "monday": {
+          "open": "08:00",
+          "close": "17:00"
+        },
+        "tuesday": {
+          "open": "08:00",
+          "close": "17:00"
+        },
+        "wednesday": {
+          "open": "08:00",
+          "close": "17:00"
+        },
+        "thursday": {
+          "open": "08:00",
+          "close": "17:00"
+        },
+        "friday": {
+          "open": "08:00",
+          "close": "17:00"
+        },
+        "saturday": {
+          "open": null,
+          "close": null
+        },
+        "sunday": {
+          "open": null,
+          "close": null
+        }
+      },
+      "address": "1304 W Springfield Ave, Urbana, IL 61801"
+    }, 
+    "Thomas M. Siebel Center for Computer Science": {
       "rooms": {
         "1304": {
           "sections": [
@@ -66916,7 +67487,8 @@
       "coordinates": {
         "longitude": -88.2247336803035,
         "latitude": 40.11383687791036
-      }
+      },
+      "address": "201 N Goodwin Ave, Urbana, IL 61801"
     },
     "Natural History Building": {
       "rooms": {
@@ -69011,7 +69583,8 @@
       "coordinates": {
         "longitude": -88.22602412010296,
         "latitude": 40.10950674217128
-      }
+      },
+      "address": "1301 W Green St, Urbana, IL 61801"
     },
     "Burrill Hall": {
       "rooms": {
@@ -70821,7 +71394,8 @@
       "coordinates": {
         "longitude": -88.22492434959888,
         "latitude": 40.10918942760395
-      }
+      },
+      "address": "407 S Goodwin Ave, Urbana, IL 61801"
     },
     "Flagg Hall": {
       "rooms": {
@@ -71272,7 +71846,8 @@
       "coordinates": {
         "longitude": -88.23394645318491,
         "latitude": 40.10280701161048
-      }
+      },
+      "address": "1207 S 4th St, Champaign, IL 61820"
     },
     "Art and Design Building": {
       "rooms": {
@@ -72349,9 +72924,10 @@
       "coordinates": {
         "longitude": -88.23251080032063,
         "latitude": 40.10184963892951
-      }
+      },
+      "address": "408 E Peabody Dr, Champaign, IL 61820"
     },
-    "Newmark Civil Engineering Bldg": {
+    "Newmark Civil Engineering Laboratory": {
       "rooms": {
         "2310": {
           "sections": [
@@ -73120,7 +73696,8 @@
       "coordinates": {
         "longitude": -88.2265859773538,
         "latitude": 40.11398169893394
-      }
+      },
+      "address": "205 N Mathews Ave, Urbana, IL 61801"
     },
     "Chemistry Annex": {
       "rooms": {
@@ -74963,7 +75540,8 @@
       "coordinates": {
         "longitude": -88.22608368107242,
         "latitude": 40.10780804722546
-      }
+      },
+      "address": "505 S Mathews Ave, Urbana, IL 61801"
     }
   }
 }
