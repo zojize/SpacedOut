@@ -185,12 +185,9 @@ export function Filters({
                         width: '100%',
                         appearance: 'none',
                         height: '10px',
-                        backgroundColor:
-                          crowdLevel == 3
-                            ? '#FF0000'
-                            : crowdLevel == 2
-                            ? '#FFA500'
-                            : '#00FF00',
+                        background: `rgba(${
+                          crowdLevel === 3 ? '255, 0, 0' : crowdLevel === 2 ? '255, 165, 0' : '0, 255, 0'
+                        }, 0.5)`,
                         borderRadius: '40vh',
                       }}
                       data-vaul-no-drag
@@ -204,7 +201,7 @@ export function Filters({
                     fontSize: '25px',
                   }}
                 >
-                  <b>Customize Day and Time</b>
+                  <b>Day and Time</b>
                 </h1>
                 <div style={{alignContent:'center'}}>
                   {/* <div style={{ marginTop: '1vh', marginBottom:'2vh'}}>
