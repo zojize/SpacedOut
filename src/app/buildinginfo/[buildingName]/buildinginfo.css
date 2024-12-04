@@ -76,7 +76,6 @@
     width: 40px;
     height: 40px;
     object-fit: cover;
-    /* border-radius: 50%; */
 }
 
 .more-info-icon {
@@ -124,3 +123,32 @@
     color:dimgrey;
     font-weight: bold;
   }
+
+.building-address {
+    display: flex;
+
+}
+
+  .address-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; 
+    margin-bottom: 1rem; 
+    width: fit-content;
+  }
+  
+  .address-text {
+    font-weight: 400; 
+    color: #6b7280; 
+    white-space: nowrap;
+    line-height: 1; 
+    font-size: 14px; 
+  }
+  
+  .address-icon {
+    color: #6b7280;
+    width: 14px; 
+    height: 14px;
+    flex-shrink: 0;
+  }
+  

@@ -9,6 +9,7 @@ import {
   Coffee,
   Armchair,
   ChevronLeft,
+  SquareArrowOutUpRight
 } from 'lucide-react';
 import { VendingMachine } from '@/components/icons/VendingMachine';
 import { Table } from '@/components/icons/Table';
@@ -88,16 +89,16 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
   const getCrowdLevelColor = (level: number) => {
     switch (level) {
       case 3:
-        return '#ef4444';
+        return 'bg-red-500 bg-opacity-40';
       case 2:
-        return '#f59e0b';
+        return 'bg-yellow-500 bg-opacity-40';
       case 1:
-        return '#10b981';
+        return 'bg-green-500 bg-opacity-40';
       default:
-        return 'gray';
+        return 'bg-gray-500 bg-opacity-40';
     }
   };
-
+  
   const getCrowdLevelIcon = (level: number) => {
     switch (level) {
       case 3:
@@ -110,18 +111,12 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         return null;
     }
   };
-
+  
   const crowdIcon = (
     <span
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        backgroundColor: getCrowdLevelColor(tags.crowd_level),
-      }}
+      className={`inline-flex items-center justify-center w-10 h-10 rounded-full ${getCrowdLevelColor(
+        tags.crowd_level
+      )}`}
     >
       {getCrowdLevelIcon(tags.crowd_level)}
     </span>
@@ -320,7 +315,26 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             {crowdIcon}
           </span>
           <span className="building-hours">{getBuildingStatus()}</span>
-          <span className="building-address">{buildingAddress}</span>
+          <span className="building-address">
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              buildingAddress
+            )}`}
+            className="address-container"
+            onClick={(e) => e.stopPropagation()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className="address-text">
+              {buildingAddress || "Address"}
+            </p>
+            <SquareArrowOutUpRight
+              className="address-icon"
+              size={14}
+              strokeWidth={1.5}
+            />
+          </a>
+          </span>
         </div>
         {
           // only show tags if there are any
