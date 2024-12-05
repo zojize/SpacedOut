@@ -11,7 +11,7 @@ export default function Page() {
   let resultsExist = false;
   
   return (
-    <div className="w-screen bg-zinc-50 h-fit">
+    <div className="w-screen h-fit">
       {buildings.map((building, i) => {
         const isFilteredOut = filters.size > 0 && Array.from(filters).some((filter) => !building?.[filter]);
         if (!isFilteredOut) {
