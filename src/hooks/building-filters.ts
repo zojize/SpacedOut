@@ -14,6 +14,11 @@ export const useFilters = () =>
     deserializer: filters => new Set(JSON.parse(filters)), 
   })
 
-
 export const useCrowdLevel = () =>
   useLocalStorage<number>('crowd-level', 3)
+
+export const useStartTime = () =>
+  useLocalStorage<number>('start-time', (new Date()).getHours())
+
+export const useEndTime = () =>
+  useLocalStorage<number>('end-time', Math.max((new Date()).getHours() + 1, 24))
