@@ -104,9 +104,11 @@ export function Filters({
 
   //   );
   // };
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     // https://vaul.emilkowal.ski/
-    <Drawer.Root direction="right">
+    <Drawer.Root direction="right" dismissible={false} open={isOpen} onOpenChange={setIsOpen} repositionInputs={false}>
       <Button
         className="fixed m-4 right-0 top-0 h-9 w-9 touch-none"
         variant="outline"
@@ -226,7 +228,7 @@ export function Filters({
                         disableClock={true}
                         onChange={setETime} 
                         value={etime} /> */}
-                        <TimePicker.RangePicker defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} allowClear={false} allowEmpty={false}
+                        <TimePicker.RangePicker inputReadOnly={true} defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} allowClear={false} allowEmpty={false}
                         onChange={(times) => {
                           if (times) {
                             setSTime(times[0]?.format(format) || null);
@@ -254,19 +256,12 @@ export function Filters({
               </div>
 
               <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <Drawer.Close asChild>
-        <button
-          style={{
-            backgroundColor: '#ADD8E6',
-            color: 'black',
-            fontWeight:'bold',
-            borderRadius: '8px',
-            padding: '20px'
-          }}
-        >
-          Close
-        </button>
-      </Drawer.Close>
+              <button
+                className="rounded-md mt-4 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                onClick={() => setIsOpen(false)}
+              >
+                Apply Filters
+              </button>
     </div>
 
             </div>
