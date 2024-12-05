@@ -108,7 +108,7 @@ export function Filters({
 
   return (
     // https://vaul.emilkowal.ski/
-    <Drawer.Root direction="right" dismissible={false} open={isOpen} onOpenChange={setIsOpen}>
+    <Drawer.Root direction="right" dismissible={false} open={isOpen} onOpenChange={setIsOpen} repositionInputs={false}>
       <Button
         className="fixed m-4 right-0 top-0 h-9 w-9 touch-none"
         variant="outline"
@@ -228,7 +228,7 @@ export function Filters({
                         disableClock={true}
                         onChange={setETime} 
                         value={etime} /> */}
-                        <TimePicker.RangePicker defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} allowClear={false} allowEmpty={false}
+                        <TimePicker.RangePicker inputReadOnly={true} defaultValue={[dayjs(stime,format), dayjs(etime,format)]} format={format} allowClear={false} allowEmpty={false}
                         onChange={(times) => {
                           if (times) {
                             setSTime(times[0]?.format(format) || null);
