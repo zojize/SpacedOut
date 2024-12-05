@@ -77,6 +77,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     router.back();
   };
 
+
   const convertTime = (time: string, to12Hour: boolean = true): string => {
     // Ensure time is properly formatted as "HH:mm"
     const [hourStr, minute] = time.split(':');
