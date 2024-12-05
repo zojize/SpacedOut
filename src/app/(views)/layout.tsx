@@ -9,7 +9,7 @@ import {
 } from '@/hooks/building-filters';
 import { List, Map } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 export default function RootLayout({
@@ -24,7 +24,13 @@ export default function RootLayout({
   const [crowdLevel, setCrowdLevel] = useCrowdLevel();
   const [stime, setSTime] = useState<string | null>('10:00');
   const [etime, setETime] = useState<string | null>('11:00');
-  const [day, setDay] = useState<string>('Thursday');
+  const [day, setDay] = useState<string | null>('Thursday');
+
+  useEffect(() => {
+    if (stime) localStorage.setItem('stime', stime);
+    if (etime) localStorage.setItem('etime', etime);
+    if (day) localStorage.setItem('day', day);
+  }, [stime, etime, day]);
 
   const toggleFilters = (key: FilterTypes) => {
     setActiveFilters(
@@ -68,3 +74,4 @@ export default function RootLayout({
     </>
   );
 }
+
