@@ -175,6 +175,8 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     const dayKey = getCurrentBuildingDay();
     const todayHours = hours;
 
+    console.log(todayHours)
+
     // Check if hours is a string ("24 hours")
     if (typeof todayHours === 'string' && todayHours === '24 hours') {
       return true; // Always open if 24 hours
@@ -271,37 +273,41 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
   const getBuildingStatus = () => {
     const dayKey = getCurrentBuildingDay();
     const todayHours = hours;
-
-    // Check if hours is a string ("24 hours")
-    if (typeof todayHours === 'string' && todayHours === '24 hours') {
-      return (
-        <span className="status-open" style={{ color: 'green' }}>
-          Open 24 Hours
-        </span>
-      );
-    }
-
-    // Otherwise, assume hours is an object and get the hours for the current day
+  
+    // Check if the hours for today are "00:00-00:00", which means "Open 24 Hours"
     const todayDayHours =
       typeof todayHours === 'object' ? todayHours[dayKey] : null;
-
+  
+    if (todayDayHours) {
+      const [openTime, closeTime] = todayDayHours.split('-');
+  
+      // If both open and close times are "00:00", show "Open 24 Hours"
+      if (openTime === '00:00' && closeTime === '00:00') {
+        return (
+          <span className="status-open" style={{ color: 'green' }}>
+            Open 24 Hours
+          </span>
+        );
+      }
+    }
+  
+    // If the hours are locked or missing
     if (!todayDayHours || todayDayHours === 'LOCKED') {
       return <span className="status-closed">Closed</span>;
     }
-
+  
+    // Otherwise, continue with the existing logic for open/close times
     const [openTime, closeTime] = todayDayHours.split('-');
     const openTimeFormatted = convertTime(openTime, true);
     const closeTimeFormatted = convertTime(closeTime, true);
-
+  
     return isOpen() ? (
       <>
-        <span className="status-open">Open</span> ⋅ Closes at{' '}
-        {closeTimeFormatted}
+        <span className="status-open">Open</span> ⋅ Closes at {closeTimeFormatted}
       </>
     ) : (
       <>
-        <span className="status-closed">Closed</span> ⋅ Opens at{' '}
-        {openTimeFormatted}
+        <span className="status-closed">Closed</span> ⋅ Opens at {openTimeFormatted}
       </>
     );
   };
