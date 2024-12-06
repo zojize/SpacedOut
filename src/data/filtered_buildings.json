@@ -65737,6 +65737,83 @@
       },
       "address": "104 S Wright St, Urbana, IL 61801"
     }, 
+    "Grainger Engineering Library": {
+      "rooms": {
+        "405": {
+          "sections": []
+        },
+        "407": {
+          "sections": []
+        },
+        "408": {
+          "sections": []
+        },
+        "409": {
+          "sections": []
+        },
+        "410": {
+          "sections": []
+        },
+        "411": {
+          "sections": []
+        },
+        "412": {
+          "sections": []
+        },
+        "413": {
+          "sections": []
+        },
+        "414": {
+          "sections": []
+        },
+        "415": {
+          "sections": []
+        },
+        "040A": {
+          "sections": []
+        },
+        "040B": {
+          "sections": []
+        },
+        "040C": {
+          "sections": []
+        },
+        "040D": {
+          "sections": []
+        }
+      },
+      "hours": {
+        "monday": {
+          "open": "00:00",
+          "close": "00:00"
+        },
+        "tuesday": {
+          "open": "00:00",
+          "close": "00:00"
+        },
+        "wednesday": {
+          "open": "00:00",
+          "close": "00:00"
+        },
+        "thursday": {
+          "open": "00:00",
+          "close": "00:00"
+        },
+        "friday": {
+          "open": "00:00",
+          "close": "00:00"
+        },
+        "saturday": {
+          "open": "10:00",
+          "close": "23:59"
+        },
+        "sunday": {
+          "open": "10:00",
+          "close": "23:59"
+        }
+      },
+      "address": "1401 W Green St, Urbana, IL 61801"
+    },
     "Illini Union": {
       "rooms": { },
       "hours": {
