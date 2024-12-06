@@ -254,6 +254,7 @@ export function Filters({
                     allowEmpty={false}
                     defaultValue={[dayjs(stime, format), dayjs(etime, format)]}
                     value={[dayjs(stime, format), dayjs(etime, format)]}
+                    getPopupContainer={(trigger) => trigger.parentElement!}
                     onClick={(event) => {
                       console.log(
                         stime,
