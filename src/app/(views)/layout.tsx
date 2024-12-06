@@ -24,7 +24,6 @@ export default function RootLayout({
   const pathname = usePathname();
 
   const date = new Date();
-  const date = new Date();
   const [activeFilters, setActiveFilters] = useFilters();
   const [crowdLevel, setCrowdLevel] = useCrowdLevel();
   const [stime, setSTime] = useSTime();
