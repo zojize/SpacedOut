@@ -5,6 +5,7 @@ import { Table } from '@/components/icons/Table';
 
 // tooltip
 import { Tooltip } from 'react-tooltip';
+import { useFilters } from '@/hooks/building-filters';
 
 const tag_info = {
     'quiet' : 'This space is quiet',
@@ -29,6 +30,7 @@ const iconMap = {
 };
 
 export function Tag({name, showName} : {name : string, showName : boolean}) {
+    const [filters] = useFilters();
 
     return(
         <div 
@@ -36,7 +38,7 @@ export function Tag({name, showName} : {name : string, showName : boolean}) {
             data-tooltip-content={tag_info[name]}
             data-tooltip-delay-hide={100}
             data-tooltip-place='top'
-            className={`border border-input rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 bg-black bg-opacity-5 items-center`}
+            className={`border border-input rounded-full flex flex-row gap-x-3 w-fit h-fit p-2.5 ${filters.has(name) ? `bg-[#ADD8E6]` : 'bg-gray-50' } items-center`}
             onClick={(e) => e.stopPropagation()}
         >
             {iconMap[name]}
