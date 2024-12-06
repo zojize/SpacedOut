@@ -20,11 +20,13 @@ export default function RootLayout({
   const router = useRouter();
   const pathname = usePathname();
 
+  const date = new Date();
   const [activeFilters, setActiveFilters] = useFilters();
   const [crowdLevel, setCrowdLevel] = useCrowdLevel();
-  const [stime, setSTime] = useState<string | null>('10:00');
-  const [etime, setETime] = useState<string | null>('11:00');
-  const [day, setDay] = useState<string | null>('Thursday');
+  const [stime, setSTime] = useState<string | null>(date.getHours() + ':' + date.getMinutes());
+  const [etime, setETime] = useState<string | null>(date.getHours()+1 + ':' + date.getMinutes());
+  const [day, setDay] = useState<string | null>((date.toLocaleString('en-us', {  weekday: 'long' })));
+
 
   useEffect(() => {
     if (stime) localStorage.setItem('stime', stime);
