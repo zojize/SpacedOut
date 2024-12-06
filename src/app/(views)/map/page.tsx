@@ -88,9 +88,9 @@ export default dynamic(
                   buildingTags.crowd_level > crowdLevel;
 
                 const crowd = [
-                  { color: 'bg-green-500', icon: IconPhUser },
-                  { color: 'bg-yellow-500', icon: IconPhUsers },
-                  { color: 'bg-red-500', icon: IconPhUsersThree },
+                  { color: 'bg-[#bfe7c3]', icon: IconPhUser },
+                  { color: 'bg-[#f3e1b2]', icon: IconPhUsers },
+                  { color: 'bg-[#f2bab6]', icon: IconPhUsersThree },
                 ][buildingTags.crowd_level - 1];
 
                 return (
@@ -105,11 +105,10 @@ export default dynamic(
                       !isFilteredOut &&
                       router.push(`/buildinginfo/${encodeURIComponent(name)}`)
                     }
-                    className="bg-white rounded-full"
                   >
                     <Button
                       className={
-                        'rounded-full bg-opacity-40 ' +
+                        'rounded-full ' +
                         (isFilteredOut ? 'bg-gray-500' : crowd.color)
                       }
                       size="icon"
