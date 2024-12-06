@@ -121,7 +121,7 @@ const icon_size = 32;
         </Drawer.Trigger>
       </Button>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+        <Drawer.Overlay className="fixed inset-0 bg-black/40" onClick={() => setIsOpen(false)}/>
         <Drawer.Content
           className="right-2 top-2 bottom-2 fixed z-10 outline-none w-[310px] flex"
           style={
