@@ -79,14 +79,16 @@ export function Filters({
   //   6: false,
   //   7: false,
   // });
+const icon_size = 32;
+  const stroke_width = 1.5;
   const iconMap = {
-    quiet: <VolumeOff />,
-    talkative: <Speech />,
-    open_late: <Moon />,
-    coffee_shop: <Coffee />,
-    vending_machine: <VendingMachine />,
-    big_tables: <Table />,
-    couches: <Armchair />,
+    quiet: <VolumeOff size={icon_size} strokeWidth={stroke_width+0.1} viewBox='-2 -2 28 28'/>,
+    talkative: <Speech size={icon_size} strokeWidth={stroke_width}/>,
+    open_late: <Moon size={icon_size} strokeWidth={stroke_width}/>,
+    coffee_shop: <Coffee size={icon_size} strokeWidth={stroke_width}/>,
+    vending_machine: <VendingMachine width={icon_size} height={icon_size}/>,
+    big_tables: <Table width={icon_size} height={icon_size}/>,
+    couches: <Armchair size={icon_size} strokeWidth={stroke_width}/>,
   };
   const format = 'HH:mm';
   const router = useRouter();
