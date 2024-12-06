@@ -39,7 +39,7 @@
     "vending_machine": false,
     "crowd_level": 1
   },
-  "Literatures, Cultures, & Ling": {
+  "Literatures, Cultures, and Linguistics Building": {
     "quiet": true,
     "talkative": false,
     "open_late": false,
@@ -218,5 +218,65 @@
     "couches": false,
     "vending_machine": true,
     "crowd_level": 3
+  },
+  "Education Building":{
+    "quiet": false,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": true,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Wohlers Hall":{
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": true,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Armory":{
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "David Kinley Hall":{
+    "quiet": false,
+    "talkative": true,
+    "open_late": false,
+    "coffee_shop": true,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Turner Hall":{
+    "quiet": false,
+    "talkative": false,
+    "open_late": false,
+    "coffee_shop": false,
+    "big_tables": false,
+    "couches": false,
+    "vending_machine": false,
+    "crowd_level": 2
+  },
+  "Architecture Building":{
+    "quiet": true,
+    "talkative": true,
+    "open_late": true,
+    "coffee_shop": false,
+    "big_tables": true,
+    "couches": false,
+    "vending_machine": true,
+    "crowd_level": 2
   }
 }

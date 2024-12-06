@@ -9,7 +9,7 @@ import { IconPhUser } from '@/components/icons/IconPhUser';
 import { IconPhUsersThree } from '@/components/icons/IconPhUsersThree';
 import { IconPhUsers } from '@/components/icons/IconPhUsers';
 
-export function BuildingCard({buildingName, buildingTags} : {buildingName : any, buildingTags : any}) {
+export function BuildingCard({buildingName, buildingTags, buildingAddress, buildingURL} : {buildingName : any, buildingTags : any, buildingAddress : any, buildingURL : any}) {
     const router = useRouter();
     const iconSize = 18;
 
@@ -34,12 +34,12 @@ export function BuildingCard({buildingName, buildingTags} : {buildingName : any,
             </div>
 
             {/* address */}
-            <a href='/map'
+            <a href={buildingURL}
                 className="flex flex-row gap-x-1 items-center w-fit "
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* <MapPin size={icon_size} className="inline"/> */}
-                <p className="font-normal text-gray-500 w-fit  mb-0">{buildingTags.address ? buildingTags.address : "Address"}</p>
+                <p className="font-normal text-gray-500 w-fit  mb-0">{buildingAddress}</p>
                 <SquareArrowOutUpRight className="text-gray-500 " size='0.8rem' strokeWidth={1.5}/>
             </a>
 

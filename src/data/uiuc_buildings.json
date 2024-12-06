@@ -4,7 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Literatures, Cultures, and Linguistics Building"
+        "name": "Literatures, Cultures, and Linguistics Building",
+        "address": "707 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/gpWr2qGvSNGgu6YK6"
       },
       "geometry": {
         "coordinates": [
@@ -17,7 +19,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Engineering Hall"
+        "name": "Engineering Hall",
+        "address": "1308 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/6zwwQ6Upq7ruq6YQ6"
       },
       "geometry": {
         "coordinates": [
@@ -30,7 +34,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Education Building"
+        "name": "Education Building",
+        "address": "1310 S 6th St, Champaign, IL 61820",
+        "url" : "https://maps.app.goo.gl/VTwbi1jD8Mp2WHtW8"
       },
       "geometry": {
         "coordinates": [
@@ -43,7 +49,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Wohlers Hall"
+        "name": "Wohlers Hall",
+        "address": "1206 S 6th St, Champaign, IL 61820",
+        "url": "https://maps.app.goo.gl/L7PXiafc6vHpPwAN6"
       },
       "geometry": {
         "coordinates": [
@@ -56,7 +64,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Gregory Hall"
+        "name": "Gregory Hall",
+        "address": "810 S Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/2SNVdiqPGvma2UF59"
       },
       "geometry": {
         "coordinates": [
@@ -69,7 +79,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Armory"
+        "name": "Armory",
+        "address" : "505 E Armory Ave, Champaign, IL 61820",
+        "url" : "https://maps.app.goo.gl/Q6N8c738q3E2kZjx8"
       },
       "geometry": {
         "coordinates": [
@@ -82,7 +94,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "David Kinley Hall"
+        "name": "David Kinley Hall",
+        "address": "1407 W Gregory Dr, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/3onv6k94NrLKunFJ8"
       },
       "geometry": {
         "coordinates": [
@@ -95,7 +109,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Lincoln Hall"
+        "name": "Lincoln Hall",
+        "address": "Lincoln Hall, 702 S Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/VGxJMppQzLyjojRF7"
       },
       "geometry": {
         "coordinates": [
@@ -108,7 +124,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Turner Hall"
+        "name": "Turner Hall",
+        "address" : "1102 S Goodwin Ave, Urbana, IL 61801",
+        "url" : "https://maps.app.goo.gl/VLLzA4XrjaYSvCNfA"
       },
       "geometry": {
         "coordinates": [
@@ -121,7 +139,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Henry Administration Building"
+        "name": "Henry Administration Building",
+        "address" : "506 S Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/Thd9Y19oj6kiEJU16"
       },
       "geometry": {
         "coordinates": [
@@ -134,7 +154,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Architecture Building"
+        "name": "Architecture Building",
+        "address": "608 Lorado Taft Dr, Champaign, IL 61820",
+        "url" : "https://maps.app.goo.gl/HZHECbU59conNSMn7"
       },
       "geometry": {
         "coordinates": [
@@ -147,7 +169,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Bevier Hall"
+        "name": "Bevier Hall",
+        "address" : "905 S Goodwin Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/fdrgF7xqAvMyH1Wb6"
       },
       "geometry": {
         "coordinates": [
@@ -160,7 +184,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mumford Hall"
+        "name": "Mumford Hall",
+        "address": "1301 W Gregory Dr, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/6jHP4TEABqEZmeru9"
       },
       "geometry": {
         "coordinates": [
@@ -173,7 +199,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Agricultural Engr Sciences Bld"
+        "name": "Agricultural Engr Sciences Bld",
+        "address": "1304 W Pennsylvania Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/JvQMxjyZGEeRAq2g8"
       },
       "geometry": {
         "coordinates": [
@@ -186,7 +214,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Campus Instructional Facility"
+        "name": "Campus Instructional Facility",
+        "address" : "1405 W Springfield Ave, Urbana, IL 61801",
+        "url" : "https://maps.app.goo.gl/eS54uQjwXKZXhwJR8"
       },
       "geometry": {
         "coordinates": [
@@ -199,7 +229,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Business Instructional Fac"
+        "name": "Business Instructional Fac",
+        "address" : "515 E Gregory Dr, Champaign, IL 61820",
+        "url" : "https://maps.app.goo.gl/cLLHrevQP93BdrAx8"
       },
       "geometry": {
         "coordinates": [
@@ -212,7 +244,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Transportation Building"
+        "name": "Transportation Building",
+        "address": "104 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/KSNJbZi1XFNYgWyW7"
       },
       "geometry": {
         "coordinates": [
@@ -225,7 +259,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "English Building"
+        "name": "English Building",
+        "address": "608 S Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/UjFVE2UzryVUWD9G6"
       },
       "geometry": {
         "coordinates": [
@@ -238,7 +274,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Davenport Hall"
+        "name": "Davenport Hall",
+        "address": "607 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/a8hk9j4DD3qgVANT7"
       },
       "geometry": {
         "coordinates": [
@@ -251,7 +289,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Sidney Lu Mechanical Engineering Building"
+        "name": "Sidney Lu Mechanical Engineering Building",
+        "address": "1206 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/v6FRMkJUrpcHycd27"
       },
       "geometry": {
         "coordinates": [
@@ -264,7 +304,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Noyes Laboratory"
+        "name": "Noyes Laboratory",
+        "address":"505 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/Fug4AH5anfsCBdiQ6"
       },
       "geometry": {
         "coordinates": [
@@ -277,7 +319,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Psychology Building"
+        "name": "Psychology Building",
+        "address":"603 E Daniel St, Champaign, IL 61820",
+        "url":"https://maps.app.goo.gl/DCxjZSFWeawwtgzQA"
       },
       "geometry": {
         "coordinates": [
@@ -290,7 +334,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Everitt Laboratory"
+        "name": "Everitt Laboratory",
+        "address": "1406 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/sPCvXQw2mic3vVjG7"
       },
       "geometry": {
         "coordinates": [
@@ -303,7 +349,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Loomis Laboratory"
+        "name": "Loomis Laboratory",
+        "address": "1110 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/vgK9AbZ713cwZG61A"
       },
       "geometry": {
         "coordinates": [
@@ -316,7 +364,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Electrical & Computer Eng Bldg"
+        "name": "Electrical & Computer Eng Bldg",
+        "address": "306 N Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/eNG6cCDzmbrUeBV66"
       },
       "geometry": {
         "coordinates": [
@@ -329,7 +379,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Music Building"
+        "name": "Music Building",
+        "address": "1114 W Nevada St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/JNBuxqA9Jf1idvHNA"
       },
       "geometry": {
         "coordinates": [
@@ -342,7 +394,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Thomas M. Siebel Center for Computer Science"
+        "name": "Thomas M. Siebel Center for Computer Science",
+        "address": "201 N Goodwin Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/duk1sL85n13rimGo7"
       },
       "geometry": {
         "coordinates": [
@@ -355,7 +409,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Natural History Building"
+        "name": "Natural History Building",
+        "address": "1301 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/nMLPysWZdLxwXy369"
       },
       "geometry": {
         "coordinates": [
@@ -368,7 +424,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Burrill Hall"
+        "name": "Burrill Hall",
+        "address": "407 S Goodwin Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/GLW7Z7uXP8aVBiKQA"
       },
       "geometry": {
         "coordinates": [
@@ -381,7 +439,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Flagg Hall"
+        "name": "Flagg Hall",
+        "address": "1207 S 4th St, Champaign, IL 61820",
+        "url": "https://maps.app.goo.gl/e79FJzAdAPrCU35FA"
       },
       "geometry": {
         "coordinates": [
@@ -395,7 +455,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Art and Design Building"
+        "name": "Art and Design Building",
+        "address": "408 E Peabody Dr, Champaign, IL 61820",
+        "url": "https://maps.app.goo.gl/kDg8UZKkwLi7Kd2v9"
       },
       "geometry": {
         "coordinates": [
@@ -409,7 +471,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Newmark Civil Engineering Laboratory"
+        "name": "Newmark Civil Engineering Laboratory",
+        "address": "205 N Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/oAweisNmBNkm6CZp7"
       },
       "geometry": {
         "coordinates": [
@@ -422,7 +486,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Chemistry Annex"
+        "name": "Chemistry Annex",
+        "address": "505 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/81xi1G8jfLn7A2VX8"
       },
       "geometry": {
         "coordinates": [
@@ -435,7 +501,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Digital Computer Laboratory"
+        "name": "Digital Computer Laboratory",
+        "address": "1304 W Springfield Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/U3A6mZt5NrktSCzp8"
       },
       "geometry": {
         "coordinates": [
@@ -448,7 +516,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Grainger Engineering Library"
+        "name": "Grainger Engineering Library",
+        "address": "1301 W Springfield Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/2Xmqa4PdG7KhSxLi8"
       },
       "geometry": {
         "coordinates": [
@@ -461,7 +531,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Talbot Laboratory"
+        "name": "Talbot Laboratory",
+        "address": "104 S Wright St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/xzLD7WCUru3NFFhp6"
       },
       "geometry": {
         "coordinates": [
@@ -474,7 +546,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mechanical Engineering Laboratory"
+        "name": "Mechanical Engineering Laboratory",
+        "address": "105 S Mathews Ave, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/tZzAEfiTQ2cEH6Zs7"
       },
       "geometry": {
         "coordinates": [
@@ -487,7 +561,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Altgeld Hall"
+        "name": "Altgeld Hall",
+        "address": "1409 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/XhS6zx1PLxi4f3Kw8"
       },
       "geometry": {
         "coordinates": [
@@ -500,7 +576,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Illini Union"
+        "name": "Illini Union",
+        "address": "1401 W Green St, Urbana, IL 61801",
+        "url": "https://maps.app.goo.gl/jVPThvBM6g4m4Af7A"
       },
       "geometry": {
         "coordinates": [
