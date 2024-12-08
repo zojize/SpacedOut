@@ -287,6 +287,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
             </span>
           ),
           isClosed: false,
+          closeTime: null,
         };
       }
     }
@@ -296,6 +297,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
       return {
         status: <span className="status-closed">Closed</span>,
         isClosed: true,
+        closeTime: null,
       };
     }
   
@@ -316,6 +318,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         </>
       ),
       isClosed: !isCurrentlyOpen,
+      closeTime: closeTimeFormatted,
     };
   };
   
@@ -371,7 +374,7 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
           )
         }
         {(() => {
-          const { isClosed } = getBuildingStatus();
+          const { isClosed, closeTime } = getBuildingStatus();
   
           if (isClosed) {
             return (
@@ -392,8 +395,10 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                       )} to ${convertTime(
                         selectedTime.end.toTimeString().slice(0, 5)
                       )}`}
-                      <br></br>
-                      <span className="currentlyclosed">(Building Closed)</span>
+                  <br />
+                  <span className="currentlyclosed">
+                    (Building closes at {closeTime || 'N/A'})
+                  </span>
                 </span>
               </div>
             );
@@ -460,7 +465,8 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
         })()}
       </div>
     </>
-  );  
+  );
+  
 };
 
 export default BuildingInfo;
