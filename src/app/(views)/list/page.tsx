@@ -5,9 +5,10 @@ import { Field, Input } from '@headlessui/react'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
 import { BuildingCard } from '@/components/ui/building_card';
-import { useFilters, useCrowdLevel } from '@/hooks/building-filters';
+import { useFilters, useCrowdLevel, useSTime, useETime, useDay } from '@/hooks/building-filters';
 import allBuildingTags from '@/data/building_tags.json';
 import { features as buildings } from '@/data/uiuc_buildings.json';
+import allBuildingHours from '@/data/buildinghours.json';
 
 /*
 TO DO:
@@ -40,6 +41,10 @@ export default function Page() {
   const router = useRouter();
   const [filters] = useFilters();
   const [crowdLevel] = useCrowdLevel();
+  const [sTime] = useSTime();
+  const [eTime] = useETime();
+  const [day] = useDay();
+
   const defaultBuildingTags = {
     crowd_level: 1,
     quiet: false,
@@ -50,6 +55,25 @@ export default function Page() {
     couches: false,
     vending_machine: false,
   };
+
+  const defaultBuildingHours = {
+    "M-TH": "8-17",
+    "F": "8-17",
+    "SAT" : "0-0",
+    "SUN" : "0-0"
+  }
+
+  const getBuildingHours = (weekday : string, hours : any) => {
+    if (weekday == 'Sunday') {
+      return hours["SUN"];
+    } else if (weekday == 'Saturday') {
+      return hours["SAT"];
+    } else if (weekday == 'Friday') {
+      return hours['F'];
+    } else {
+      return hours['M-TH'];
+    }
+  }
 
   let resultsExist = false;
 
@@ -75,17 +99,25 @@ export default function Page() {
         </div>
       </Field>
       
-      {filteredBuildings.map(({ properties: { name } }, i) => {
+      {filteredBuildings.map(({ properties: { name, address, url } }, i) => {
         const buildingName = name as keyof typeof allBuildingTags;
         const buildingTags = allBuildingTags[buildingName] ?? defaultBuildingTags;
-        const isFilteredOut = filters.size > 0 && Array.from(filters).some((filter) => !buildingTags?.[filter]) || buildingTags.crowd_level > crowdLevel;
+        const buildingHours = getBuildingHours(day, (allBuildingHours[buildingName] ?? defaultBuildingHours));
+        const isFilteredOut = (
+          filters.size > 0 && Array.from(filters).some((filter) => !buildingTags?.[filter]) 
+          || buildingTags.crowd_level > crowdLevel
+          || Number(sTime.substring(0, sTime.indexOf(':'))) + Number(sTime.substring(sTime.indexOf(':')+1))/60 > buildingHours.substring(buildingHours.indexOf('-')+1)
+          || Number(eTime.substring(0, eTime.indexOf(':'))) + Number(eTime.substring(eTime.indexOf(':')+1))/60 < buildingHours.substring(0, buildingHours.indexOf('-'))
+        );
         if (!isFilteredOut) {
           resultsExist = true;
           return(
             <BuildingCard 
               key={i}
               buildingName={buildingName}
-              buildingTags={buildingTags}/>
+              buildingTags={buildingTags}
+              buildingAddress={address}
+              buildingURL={url}/>
           );
         }
       })}
