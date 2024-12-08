@@ -280,17 +280,23 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
   
       // If both open and close times are "00:00", show "Open 24 Hours"
       if (openTime === '00:00' && closeTime === '00:00') {
-        return (
-          <span className="status-open" style={{ color: 'green' }}>
-            Open 24 Hours
-          </span>
-        );
+        return {
+          status: (
+            <span className="status-open" style={{ color: 'green' }}>
+              Open 24 Hours
+            </span>
+          ),
+          isClosed: false,
+        };
       }
     }
   
     // If the hours are locked or missing
     if (!todayDayHours || todayDayHours === 'LOCKED') {
-      return <span className="status-closed">Closed</span>;
+      return {
+        status: <span className="status-closed">Closed</span>,
+        isClosed: true,
+      };
     }
   
     // Otherwise, continue with the existing logic for open/close times
@@ -298,17 +304,21 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     const openTimeFormatted = convertTime(openTime, true);
     const closeTimeFormatted = convertTime(closeTime, true);
   
-    return isOpen() ? (
-      <>
-        <span className="status-open">Open</span> ⋅ Closes at {closeTimeFormatted}
-      </>
-    ) : (
-      <>
-        <span className="status-closed">Closed</span> ⋅ Opens at {openTimeFormatted}
-      </>
-    );
+    const isCurrentlyOpen = isOpen();
+    return {
+      status: isCurrentlyOpen ? (
+        <>
+          <span className="status-open">Open</span> ⋅ Closes at {closeTimeFormatted}
+        </>
+      ) : (
+        <>
+          <span className="status-closed">Closed</span> ⋅ Opens at {openTimeFormatted}
+        </>
+      ),
+      isClosed: !isCurrentlyOpen,
+    };
   };
-
+  
   return (
     <>
       <div className="maincontainer">
@@ -321,37 +331,30 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
           <ChevronLeft size={24} />
         </Button>
         <div className="maininfo">
-          <span className="building-name">
-            {buildingName}
-          </span>
-          <span className="crowd-icon">
-          {crowdIcon}
-          </span>
-          
-          <span className="building-hours">{getBuildingStatus()}</span>
+          <span className="building-name">{buildingName}</span>
+          <span className="crowd-icon">{crowdIcon}</span>
+          <span className="building-hours">{getBuildingStatus().status}</span>
           <span className="building-address">
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              address
-            )}`}
-            className="address-container"
-            onClick={(e) => e.stopPropagation()}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="address-text">
-              {address || "Address"}
-            </p>
-            <SquareArrowOutUpRight
-              className="address-icon"
-              size={14}
-              strokeWidth={1.5}
-            />
-          </a>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                address
+              )}`}
+              className="address-container"
+              onClick={(e) => e.stopPropagation()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="address-text">{address || 'Address'}</p>
+              <SquareArrowOutUpRight
+                className="address-icon"
+                size={14}
+                strokeWidth={1.5}
+              />
+            </a>
           </span>
         </div>
         {
-          // only show tags if there are any
+          // Only show tags if there are any
           Object.entries(tags).some(([k, v]) => k !== 'crowd_level' && v) && (
             <div className="buildingtags">
               <span className="tags-text"> Tags: </span>
@@ -361,17 +364,45 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                     <div key={index}>
                       <Tag name={tag.name} showName={false} />
                     </div>
-                  ) : null,
+                  ) : null
                 )}
               </div>
             </div>
           )
         }
-        {rooms && (() => {
+        {(() => {
+          const { isClosed } = getBuildingStatus();
+  
+          if (isClosed) {
+            return (
+              <div className="no-rooms-message">
+                <span className="rooms-title">No Open Rooms</span>
+                <br />
+                <span className="rooms-time">
+                  {selectedTime instanceof Date
+                    ? `${convertTime(
+                        selectedTime.toTimeString().slice(0, 5)
+                      )} to ${convertTime(
+                        new Date(selectedTime.getTime() + 60 * 60 * 1000)
+                          .toTimeString()
+                          .slice(0, 5)
+                      )}`
+                    : `${convertTime(
+                        selectedTime.start.toTimeString().slice(0, 5)
+                      )} to ${convertTime(
+                        selectedTime.end.toTimeString().slice(0, 5)
+                      )}`}
+                      <br></br>
+                      <span className="currentlyclosed">(Building Closed)</span>
+                </span>
+              </div>
+            );
+          }
+  
           const availableRooms = Object.entries(rooms).filter(
             ([, { sections }]) => isRoomAvailable(sections)
           );
-
+  
           if (availableRooms.length > 0) {
             return (
               <div className="roomscontainer">
@@ -381,16 +412,16 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                   <span className="rooms-time">
                     {selectedTime instanceof Date
                       ? `${convertTime(
-                          selectedTime.toTimeString().slice(0, 5),
+                          selectedTime.toTimeString().slice(0, 5)
                         )} - ${convertTime(
                           new Date(selectedTime.getTime() + 60 * 60 * 1000)
                             .toTimeString()
-                            .slice(0, 5),
+                            .slice(0, 5)
                         )}`
                       : `${convertTime(
-                          selectedTime.start.toTimeString().slice(0, 5),
+                          selectedTime.start.toTimeString().slice(0, 5)
                         )} - ${convertTime(
-                          selectedTime.end.toTimeString().slice(0, 5),
+                          selectedTime.end.toTimeString().slice(0, 5)
                         )}`}
                   </span>
                 </span>
@@ -409,29 +440,27 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
                 <span className="rooms-title">No Open Rooms</span>
                 <br />
                 <span className="rooms-time">
-                {selectedTime instanceof Date
-                  ? `${convertTime(
-                      selectedTime.toTimeString().slice(0, 5),
-                    )} to ${convertTime(
-                      new Date(selectedTime.getTime() + 60 * 60 * 1000)
-                        .toTimeString()
-                        .slice(0, 5),
-                    )}`
-                  : `${convertTime(
-                      selectedTime.start.toTimeString().slice(0, 5),
-                    )} to ${convertTime(
-                      selectedTime.end.toTimeString().slice(0, 5),
-                    )}`}
-                  </span>
+                  {selectedTime instanceof Date
+                    ? `${convertTime(
+                        selectedTime.toTimeString().slice(0, 5)
+                      )} to ${convertTime(
+                        new Date(selectedTime.getTime() + 60 * 60 * 1000)
+                          .toTimeString()
+                          .slice(0, 5)
+                      )}`
+                    : `${convertTime(
+                        selectedTime.start.toTimeString().slice(0, 5)
+                      )} to ${convertTime(
+                        selectedTime.end.toTimeString().slice(0, 5)
+                      )}`}
+                </span>
               </div>
             );
           }
         })()}
-
-
       </div>
     </>
-  );
+  );  
 };
 
 export default BuildingInfo;
