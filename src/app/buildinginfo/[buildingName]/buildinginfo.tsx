@@ -175,10 +175,10 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     const dayKey = getCurrentBuildingDay();
     const todayHours = hours;
 
-    // Check if hours is a string ("24 hours")
-    if (typeof todayHours === 'string' && todayHours === '24 hours') {
-      return true; // Always open if 24 hours
-    }
+    // // Check if hours is a string ("24 hours")
+    // if (typeof todayHours === 'string' && todayHours === '24 hours') {
+    //   return true; // Always open if 24 hours
+    // }
 
     // Otherwise, assume hours is an object and get the hours for the current day
     const todayDayHours =
@@ -272,7 +272,6 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     const dayKey = getCurrentBuildingDay();
     const todayHours = hours;
   
-    // Check if the hours for today are "00:00-00:00", which means "Open 24 Hours"
     const todayDayHours =
       typeof todayHours === 'object' ? todayHours[dayKey] : null;
   

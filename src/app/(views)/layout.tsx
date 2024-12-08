@@ -30,11 +30,11 @@ export default function RootLayout({
   const [etime, setETime] = useETime();
   const [day, setDay] = useDay();
 
-  // useEffect(() => {
-  //   if (stime) localStorage.setItem('stime', stime);
-  //   if (etime) localStorage.setItem('etime', etime);
-  //   if (day) localStorage.setItem('day', day);
-  // }, [stime, etime, day]);
+  useEffect(() => {
+    if (stime) localStorage.setItem('stime', stime);
+    if (etime) localStorage.setItem('etime', etime);
+    if (day) localStorage.setItem('day', day);
+  }, [stime, etime, day]);
 
   const toggleFilters = (key: FilterTypes) => {
     setActiveFilters(
