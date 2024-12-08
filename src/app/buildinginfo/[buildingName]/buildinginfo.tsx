@@ -175,8 +175,6 @@ const BuildingInfo: React.FC<BuildingInfoProps> = ({
     const dayKey = getCurrentBuildingDay();
     const todayHours = hours;
 
-    console.log(todayHours)
-
     // Check if hours is a string ("24 hours")
     if (typeof todayHours === 'string' && todayHours === '24 hours') {
       return true; // Always open if 24 hours
